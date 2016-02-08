@@ -1,0 +1,170 @@
+body {
+  background-color: #EEE;
+}
+
+#container {
+  background-color: white;
+  width: 800px;
+  height: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#header {
+  background-color: #2980b9;
+  width: 800px;
+  height: 50px;
+  color: #ecf0f1;
+}
+
+#search {
+  background-color: #2980b9;
+  width: 600px;
+  height: 40px;
+  float: top;
+  float: left;
+}
+#main {
+  padding: 0px 0px 0px 80px;
+  width: 600px;
+  float:top;
+}
+
+#topics {
+  background-color: #16a085;
+  width: 300px;
+  height: 800px;
+  color: black;
+  float: left;
+}
+
+#background {
+  background-color: #1abc9c;
+  width: 300px;
+  height: 800px;
+  color: black;
+  float: right;
+}
+
+#left {
+  width: 80px;
+  height: 1300px;
+  float: left;
+}
+
+#profile {
+  background-color: #4aa3df;
+  height: 200px;
+  color: #2c3e50;
+  font-size:x-small;
+  float: top;
+}
+#nav {
+  background-color: #2980b9;
+  height: 600px;
+  float: top;
+}
+#sidebar{
+  background-color: #4aa3df;
+  width: 120px;
+  height: 900px;
+  float: right;
+}
+
+
+
+.inputBoxSearch
+{
+  font-family: Arial,sans-serif;
+  font-size: 11px;
+  background-color: #FFFFFF;
+  height: 24px;
+  width: 500px;
+  border-radius: 4px;
+
+  margin: 7px;
+  outline: 0;
+  padding-right: 75px;
+  padding-left: 5px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  color:#8a97a0;
+  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+
+  border: solid 1px #fff;
+  box-shadow: inset 1px 1px 2px 0 #707070;
+  transition: box-shadow 0.3s;
+}
+
+.buttonSearch {
+  width: 74px;
+  height: 24px;
+  font-size: 11px;
+  text-decoration: inherit;
+  margin-left: -85px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+  border: 1px solid #fff;
+  text-shadow: 0px 1px 6px rgba(255, 255, 255, 0.54);
+  -webkit-box-shadow: inset 1px 1px 32px 0px rgba(255, 255, 255, 0.69);
+  -moz-box-shadow: inset 1px 1px 32px 0px rgba(255, 255, 255, 0.69);
+  box-shadow: inset 1px 1px 32px 0px rgba(255, 255, 255, 0.69);
+  cursor: pointer;
+  color: #666666;
+  display: inline-block;
+  background: -webkit-linear-gradient(94deg, #e9e9e9 18%, #f9f9f9 95%);
+  background: -moz-linear-gradient(94deg, #e9e9e9 18%, #f9f9f9 95%);
+  background: -ms-linear-gradient(94deg, #e9e9e9 18%, #f9f9f9 95%);
+  background: linear-gradient(184deg, #f9f9f9 18%, #e9e9e9 95%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f9f9f9",endColorstr="#e9e9e9");
+}
+
+.buttonSearch:hover {
+  background: -webkit-linear-gradient(94deg, #f9f9f9 18%, #e9e9e9 95%);
+  background: -moz-linear-gradient(94deg, #f9f9f9 18%, #e9e9e9 95%);
+  background: -ms-linear-gradient(94deg, #f9f9f9 18%, #e9e9e9 95%);
+  background: linear-gradient(184deg, #e9e9e9 18%, #f9f9f9 95%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e9e9e9",endColorstr="#f9f9f9");
+}
+
+.buttonSearch:active {
+  position:relative;
+  right: 1px;
+}
+
+#topicTitle
+{
+  font-size: 17px;
+  height: 10px;
+  float: top;
+}
+#topicOwner
+{
+  font-size: 10px;
+  height: 5px;
+  float: top;
+}
+
+#topicVoteResults
+{
+  font-size: 6px;
+  float: left;
+}
+
+
+.draggableTopicsComment
+{
+  width: 260px;
+  height: 20px;
+  float: top;
+  margin-left: 20px;
+  background: black;
+  color: white;
+  font-size: 13px;
+}

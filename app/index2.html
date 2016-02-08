@@ -1,0 +1,35 @@
+<h2>View 0</h2>
+
+
+<select ng-model="selectedName" ng-options="x for x in names">
+</select>
+Name:
+<br/>
+<input type="text" ng-model="name"/>
+<span ng-bind="selectedName + ' is selected ' "></span>
+
+<br />
+<ul>
+    <li ng-repeat="person in persons | filter:name | orderBy:uni">
+        {{ person.name | uppercase }}
+        {{ person.uni | lowercase}}
+    </li>
+
+
+</ul>
+
+
+<br/>
+Person Name:
+<br/>
+<input type="text" ng-model="newPerson.name" />
+<br />
+Person Uni:
+<br/>
+<input type="text" ng-model="newPerson.uni" />
+<br/>
+
+<br/>
+<a href="#/view2">View2</a>
+
+</div>

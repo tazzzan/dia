@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>View 0</h2>
+    Name:
+
+    <br/>
+    <input type="text" ng-model="name" /> {{name}}
+
+
+    <br />
+    <ul>
+        <li ng-repeat="person in persons | filter:name | orderBy:uni">
+            {{ person.name | uppercase }}
+            {{ person.uni | lowercase}} </li>
+    </ul>
+
+    <br/>
+    Person Name:
+    <br/>
+    <input type="text" ng-model="newPerson.name" />
+    <br />
+    Person Uni:
+    <br/>
+    <input type="text" ng-model="newPerson.uni" />
+    <br/>
+    <button ng-click="addPerson()">AddPerson</button>
+    <a href="#/view2">View2</a>
+
+</div>

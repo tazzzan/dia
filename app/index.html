@@ -1,0 +1,121 @@
+
+<html ng-app="dia">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="app.css">
+    <script src="my_jquery_functions.js"></script>
+
+<body>
+
+
+<div ng-controller="simpleController">
+
+    <!-- Here ui_container -->
+    <div id="container">
+
+
+        <!-- Here ui_header -->
+        <div id="header">
+            <h1>Dia </h1>
+        </div>
+
+
+        <!-- Here ui_sidebar -->
+        <div id="sidebar">
+            <p> BLA </p>
+        </div>
+
+
+        <!-- Here ui_left-->
+        <div id="left">
+
+            <!-- Here ui_profile -->
+            <div id="profile">
+                </br>
+                <p ng-repeat="x in profile | filter:name |orderBy:'uni'">{{ x }}</p>
+            </div>
+
+            <!-- Here ui_nav -->
+            <div id="nav">
+                <button ng-click="clickNewArticle()">Neuen Artikel schreiben</button>
+            </div>
+        </div>
+
+
+        <!-- Here ui_search -->
+        <div id="search">
+            <input class="inputBoxSearch" type="text" ng-model="query"/>
+            <button class="buttonSearch" ng-click="search()">SEARCH</button>
+            {{ query }}
+        </div>
+
+
+        <!-- Here ui_main -->
+        <div id="main">
+
+            <!-- Here ui_topics -->
+            <div id="topics">
+                <button ng-click="fillTopics()">CLICKME</button>
+
+
+                <!-- Here ui_topic -->
+                <div id="topic">
+
+
+                    <div ng-repeat="topic in topics | filter:query">
+
+                        <h1 id="topicTitle"> {{ topic.name }} </h1>
+
+                        <p id="topicOwner"> {{topic.owner}} </p>
+
+                        <img src="img/merkel.jpg" style="width:80px;height:88px;float:right" id="topicImage">
+
+                        <p id="topicVoteResults">
+                            <ul>
+                                <li ng-repeat="a in topic.vts"> {{ a }}</li>
+                            </ul>
+                        </p>
+
+
+
+                        <div id="commentOfTopic" my-dir style="float:top"r>
+
+                            <p class="pComment" > Comments: </p>
+
+                            <div class="draggableTopicsComment"
+                                 class="ui-widget-content ui-draggable ui-draggable-handle" style="position: relative;"
+                                 ng-repeat="a in topic.comments">
+                                <p>{{ a }}</p>
+                            </div>
+                        </div>
+
+                        <hr/>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Here ui_background -->
+            <div id="background">
+
+
+
+                <p>background...</p>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="app.js"></script>
+<script src="controller.js"></script>
+</body>
+</html>
