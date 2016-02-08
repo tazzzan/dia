@@ -12,6 +12,9 @@ dia.directive('myDir', function () {
     };
 });
 
+
+myyy
+
 dia.directive('myDirr', function () {
     return {
         restrict: 'A',
