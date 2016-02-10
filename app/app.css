@@ -26,13 +26,13 @@ body {
 }
 #main {
   padding: 0px 0px 0px 80px;
-  width: 600px;
+  width: 904px;
   float:top;
 }
 
 #topics {
   background-color: #16a085;
-  width: 300px;
+  width: 380px;
   height: 800px;
   color: black;
   float: left;
@@ -40,7 +40,7 @@ body {
 
 #background {
   background-color: #1abc9c;
-  width: 300px;
+  width: 380px;
   height: 800px;
   color: black;
   float: right;
