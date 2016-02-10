@@ -7,12 +7,12 @@ $(document).ready(function(){
 
 
 $(document).ready(function(){
-    $(".tbutton").click(function(){
+    $(".tbutton ").click(function(){
         $("#thisp").toggle();
     });
 });
 
 
 $(document).ready(function() {
-    $( ".draggableComment" ).draggable({ });
+    $( ".draggable" ).draggable({ revert: true});
 });

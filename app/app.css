@@ -1,19 +1,19 @@
 body {
-  background-color: #EEE;
+  background-color: lightgrey;
 }
 
 #container {
   background-color: white;
-  width: 800px;
-  height: 1200px;
-  margin-left: auto;
+  width: 1024px;
+  height: 1280px;
+  a: auto;
   margin-right: auto;
 }
 
 #header {
   background-color: #2980b9;
-  width: 800px;
-  height: 50px;
+  width: 1024px;
+  height: 30px;
   color: #ecf0f1;
 }
 
@@ -47,14 +47,14 @@ body {
 }
 
 #left {
-  width: 80px;
-  height: 1300px;
+  width: 120px;
+  height: 1024px;
   float: left;
 }
 
 #profile {
   background-color: #4aa3df;
-  height: 200px;
+  height: 150px;
   color: #2c3e50;
   font-size:x-small;
   float: top;
@@ -168,3 +168,17 @@ body {
   color: white;
   font-size: 13px;
 }
+
+.buttonsRoleSelection
+{
+  width:38px;
+  margin: 1px;
+  font-size: 5px;
+  float:left;
+}
+
+#roleSelection
+{
+  float: bottom;
+}
+

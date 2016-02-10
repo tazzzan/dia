@@ -1,16 +1,15 @@
-
 <html ng-app="dia">
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
 
 
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
-    <link rel="stylesheet" href="app.css">
-    <script src="my_jquery_functions.js"></script>
+<link rel="stylesheet" href="app.css">
+<script src="my_jquery_functions.js"></script>
 
 <body>
-
 
 <div ng-controller="simpleController">
 
@@ -33,15 +32,23 @@
         <!-- Here ui_left-->
         <div id="left">
 
+
             <!-- Here ui_profile -->
             <div id="profile">
                 </br>
                 <p ng-repeat="x in profile | filter:name |orderBy:'uni'">{{ x }}</p>
+
+
+                <div id="roleSelection">
+                    <button id="buttonRoleStandard" class="buttonsRoleSelection"> Standard </button>
+                    <button id="buttonRolePublisher" class="buttonsRoleSelection"> Publisher</button>
+                    <button id="buttonRoleDeveloper" class="buttonsRoleSelection"> Developer </button>
+                </div>
+
             </div>
 
             <!-- Here ui_nav -->
             <div id="nav">
-                <button ng-click="clickNewArticle()">Neuen Artikel schreiben</button>
             </div>
         </div>
 
@@ -74,22 +81,23 @@
 
                         <img src="img/merkel.jpg" style="width:80px;height:88px;float:right" id="topicImage">
 
-                        <p id="topicVoteResults">
-                            <ul>
-                                <li ng-repeat="a in topic.vts"> {{ a }}</li>
-                            </ul>
-                        </p>
+                        <ul id="topicVoteResults">
+                            <li ng-repeat="a in topic.vts"> {{ a }}</li>
+                        </ul>
 
+                        <div id="commentOfTopic" style="float:top">
 
+                            <p class="pComment" ng-click="hideComment($index)"> Comments: </p>
 
-                        <div id="commentOfTopic" my-dir style="float:top"r>
+                            <div id="comment-{{$index}}">
 
-                            <p class="pComment" > Comments: </p>
+                                <div class="draggableTopicsComment ui-widget-content ui-draggable ui-draggable-handle"
+                                     style="position: relative;"
+                                     ng-repeat="a in topic.comments"
+                                     comment-section comment='a'>
 
-                            <div class="draggableTopicsComment"
-                                 class="ui-widget-content ui-draggable ui-draggable-handle" style="position: relative;"
-                                 ng-repeat="a in topic.comments">
-                                <p>{{ a }}</p>
+                                </div>
+
                             </div>
                         </div>
 
@@ -102,6 +110,9 @@
             <!-- Here ui_background -->
             <div id="background">
 
+                <box-background class="boxBackground">
+
+                </box-background>
 
 
                 <p>background...</p>
@@ -111,8 +122,6 @@
         </div>
     </div>
 </div>
-
-
 
 
 <script src="app.js"></script>

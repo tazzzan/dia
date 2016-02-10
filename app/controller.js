@@ -29,12 +29,22 @@ dia.controller('simpleController', function ($scope) {
     }
 
     $scope.topics = [];
+
+    function comment(comment) {
+        this.title = comment;
+    }
+
+    $scope.comments1 = [comment ("Awesome"), comment ("Perfect")];
+
+
     $scope.fillTopics = function () {
 
         $scope.topics.push(
-            $scope.topic2 = new topic("No boarders","Uta", ['20% pro', '80% contra'], ['Awesome', 'Fucked up', 'Cool']),
+            $scope.topic2 = new topic("No boarders","Uta", ['20% pro', '80% contra'], ['Shit', 'Thumb up', 'Nice']),
             $scope.topic3 = new topic("No student loans anymore!", "Pete", ['10% pro', '90% contra'], ['Shit', 'Thumb up', 'Nice']),
-            $scope.topic4 = new topic("Coffee for free in Glasgow!", "Ilja", ['60% pro', '40% contra'], ['Finally', 'Awesome', 'haha'])
+            $scope.topic4 = new topic("Coffee for free in Glasgow!", "Ilja", ['60% pro', '40% contra'], ['Finally', 'Awesome', 'haha']),
+            $scope.topic5 = new topic("ree in Glasgow!", "Ilja", ['60% pro', '40% contra'], ['Finally', 'Awesome', 'haha'])
+
         );
     };
 
@@ -49,5 +59,9 @@ dia.controller('simpleController', function ($scope) {
 
             });
     };
+
+    $scope.hideComment = function(id) {
+        $('#comment-' + id).toggle();
+    }
 
 });
