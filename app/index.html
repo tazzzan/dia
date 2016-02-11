@@ -11,8 +11,9 @@
 
 <body>
 
-<div ng-controller="simpleController">
 
+<div ng-controller="simpleController">
+    {{fillTopics()}}
     <!-- Here ui_container -->
     <div id="container">
 
@@ -49,6 +50,7 @@
 
             <!-- Here ui_nav -->
             <div id="nav">
+                <button ng-click="fillTopics()" >add topics</button>
             </div>
         </div>
 
@@ -65,26 +67,20 @@
         <div id="main">
 
             <!-- Here ui_topics -->
-            <div id="topics">
-                <button ng-click="fillTopics()">CLICKME</button>
-                <hr class="hrTopic">
-
+            <div id="liveStream">
                 <!-- Here ui_topic -->
                 <div id="topic">
 
-
                     <div ng-repeat="topic in topics | filter:query">
 
-                        <div id="topicAreaTitle">
-                            <h1 id="topicTitle"> {{ topic.name }} </h1>
+                        <div  id="topicAreaTitle">
+                            <p> {{ topic.name }} </p>
                         </div>
 
                     <!--<img src="img/merkel.jpg" style="width:80px;height:88px;float:right" id="topicImage"> -->
 
 
                         <div id="topicAreaBody">
-
-
                             <div id="topicAreaLeft">
                                 <p id="topicOwner"> {{topic.owner}} : </p>
                                 <p>
@@ -104,26 +100,21 @@
 
                         <div id="topicAreaBottom">
 
-                            <div id="commentOfTopic" style="float:top">
+                            <comment-arrow ng-click="toggleComment($index)">
+                            </comment-arrow>
 
-                                <p class="pComment" ng-click="toggleComment($index)"> Comments: </p>
+                            <div id="commentsOfTopic" style="float:top">
 
-                                <comment-arrow ng-click="toggleComment($index)">
-
-                                </comment-arrow>
 
                                 <div class="comment-{{$index}}">
-
                                     <div class="draggableTopicsComment"
                                          ng-repeat="a in topic.comments"
                                          comment-section comment='a'
                                     >
-                                        hideComment($index);
-
                                     </div>
 
                                 </div>
-                                <hr class="hrTopic">
+                                <hr class="hrTopic", >
                             </div>
 
                         </div>

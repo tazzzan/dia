@@ -30,12 +30,6 @@ dia.controller('simpleController', function ($scope) {
 
     $scope.topics = [];
 
-    function comment(comment) {
-        this.title = comment;
-    }
-
-    $scope.comments1 = [comment ("Awesome"), comment ("Perfect")];
-
 
     $scope.fillTopics = function () {
 
@@ -64,7 +58,4 @@ dia.controller('simpleController', function ($scope) {
         $('.comment-' + id).toggle();
     }
 
-    $scope.hideComment = function(id) {
-        $('.comment-' +id).hide();
-    }
 });

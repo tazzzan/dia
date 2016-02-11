@@ -24,6 +24,16 @@ dia.directive('commentSection', function () {
     };
 });
 
+dia.directive('makeDraggable', function () {
+    return {
+        restrict: 'AE',
+        transclude: true,
+        link: function (element, attrs) {
+            $(element).draggable({appendTo: 'body', revert: true});
+        }
+    }
+})
+
 dia.directive('boxBackground', function () {
     return {
         restrict: 'AE',
@@ -36,14 +46,14 @@ dia.directive('boxBackground', function () {
             $(element).draggable({appendTo: 'body', revert: true});
         }
     }
-})
+});
 
 dia.directive('commentArrow', function () {
     return {
         restrict: 'E',
         transclude: true,
-        template: '<div class="commentArrow"></div>'
+        template: '<div class="commentArrow">  </div>'
     }
-})
+});
 
 
