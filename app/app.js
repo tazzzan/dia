@@ -1,23 +1,25 @@
 var dia = angular.module("dia", []);
 
 
-dia.directive('myDir', function () {
+dia.directive('commentSection', function () {
     return {
         restrict: 'A',
+        transclude: true,
+        scope: {comment: '='},
+        template: '<p class="draggableTopicsComment" >{{ comment }}</p>',
         link: function (scope, element, attrs) {
-            $(".pComment").click(function(){
-            $(".draggableTopicsComment").toggle();
-            });
+            $(element).draggable({appendTo: 'body', revert: true});
         }
+
     };
 });
 
-dia.directive('commentSection', function () {
+dia.directive('voteoptionSection', function () {
     return {
-        restrict: 'AE',
+        restrict: 'A',
         transclude: true,
-        scope: {comment: '='},
-        template: '<p>{{ comment }}</p>',
+        scope: {voteoption: '='},
+        template: '<p id="draggableVoteOption">{{ voteoption }}</p>',
         link: function (scope, element, attrs) {
             $(element).draggable({appendTo: 'body', revert: true});
         }
@@ -53,6 +55,18 @@ dia.directive('commentArrow', function () {
         restrict: 'E',
         transclude: true,
         template: '<div class="commentArrow">  </div>'
+    }
+});
+
+
+
+dia.directive('hideElement', function () {
+    return {
+        restrict: 'A',
+        transclude: true,
+        link: function (element, attrs) {
+            $(element).hide();
+        }
     }
 });
 

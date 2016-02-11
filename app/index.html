@@ -13,7 +13,7 @@
 
 
 <div ng-controller="simpleController">
-    {{fillTopics()}}
+
     <!-- Here ui_container -->
     <div id="container">
 
@@ -51,7 +51,11 @@
             <!-- Here ui_nav -->
             <div id="nav">
                 <button ng-click="fillTopics()" >add topics</button>
+                <button ng-click="fillVoteOptions()" >add voteOptions</button>
+
             </div>
+
+
         </div>
 
 
@@ -77,44 +81,67 @@
                             <p> {{ topic.name }} </p>
                         </div>
 
-                    <!--<img src="img/merkel.jpg" style="width:80px;height:88px;float:right" id="topicImage"> -->
-
 
                         <div id="topicAreaBody">
+
                             <div id="topicAreaLeft">
-                                <p id="topicOwner"> {{topic.owner}} : </p>
-                                <p>
-                                    Hier kommt dann die Beschreibung rein. Die Schriftgröße sollte anpassbar sein.
-                                </p>
+
+                                <div id="topicOwnerBox">
+                                    <div id="topicOwner" class="topicsElements"><p> {{topic.owner}}</p> </div>
+                                </div>
+
+                                <div id="topicDescriptionBox">
+                                    <p id="topicDescription" class="topicsElements">
+                                        Hier kommt dann die Beschreibung rein. Die Schriftgroesse sollte anpassbar sein.
+                                        Ich hoffe, dass die Texte hier nicht allzu lang werden.
+                                    </p>
+                                </div>
+
                             </div>
 
                             <div id="topicAreaRight">
-                                <ul id="topicVoteResults">
-                                    <li ng-repeat="a in topic.vts"> {{ a }}</li>
-                                </ul>
+
+                                <div id="topicVoteResultsBox">
+                                    <ul id="topicVoteResults" class="topicsElements">
+                                        <li ng-repeat="a in topic.vts"> {{ a }}</li>
+                                    </ul>
+                                </div>
+
+                                <div id="topicVoteOptionsBox">
+
+                                    <div class="voteOption">
+
+                                        <div
+                                             ng-repeat="b in topic.voteOptions"
+                                             voteoption-section voteoption='b'>
+                                        </div>
+
+                                    </div>
+                                </div>
 
                             </div>
-
 
                         </div>
 
                         <div id="topicAreaBottom">
 
-                            <comment-arrow ng-click="toggleComment($index)">
+                            <comment-arrow ng-click="toggleCommentsSection($index)">
                             </comment-arrow>
 
-                            <div id="commentsOfTopic" style="float:top">
+                            <div id="commentsSection-{{$index}}" >
 
 
-                                <div class="comment-{{$index}}">
-                                    <div class="draggableTopicsComment"
-                                         ng-repeat="a in topic.comments"
-                                         comment-section comment='a'
-                                    >
+                                <div class="comment">
+
+                                    <div
+                                         ng-repeat="c in topic.comments"
+                                         comment-section comment='c'>
                                     </div>
 
                                 </div>
-                                <hr class="hrTopic", >
+
+                                <hr class="hrTopic" >
+
                             </div>
 
                         </div>

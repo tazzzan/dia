@@ -1,25 +1,42 @@
+/*
+General Sections:
+
+body
+    #container
+        #header
+        #search
+        #main
+            #livestream
+            #background
+        #left
+            #profile
+            #nav
+        #sidebar
+
+*/
+
 body {
     background-color: lightgrey;
 }
 
 #container {
     background-color: white;
-    width: 1024px;
-    height: 1280px;
+    width: 1280px;
+    height: 1024px;
     a: auto;
     margin-right: auto;
 }
 
 #header {
-    background-color: #2980b9;
-    width: 1024px;
+    background-color: #0000ff;
+    width: 1280px;
     height: 30px;
     color: #ecf0f1;
 }
 
 #search {
-    background-color: #2980b9;
-    width: 600px;
+    background-color: #0000ff;
+    width: 1040px;
     height: 40px;
     float: top;
     float: left;
@@ -27,13 +44,21 @@ body {
 
 #main {
     padding: 0px 0px 0px 80px;
-    width: 904px;
+    width: 1040px;
     float: top;
+}
+
+#liveStream {
+    background-color: #16a085;
+    width: 500px;
+    height: 800px;
+    color: black;
+    float: left;
 }
 
 #background {
     background-color: #1abc9c;
-    width: 380px;
+    width: 500px;
     height: 800px;
     color: black;
     float: right;
@@ -54,24 +79,31 @@ body {
 }
 
 #nav {
-    background-color: #2980b9;
+    background-color: #0000ff;
     height: 600px;
     float: top;
 }
 
 #sidebar {
-    background-color: #4aa3df;
+    background-color: #0000ff;
     width: 120px;
     height: 900px;
     float: right;
 }
+
+/*
+
+elements of:
+#search
+
+*/
 
 .inputBoxSearch {
     font-family: Arial, sans-serif;
     font-size: 11px;
     background-color: #FFFFFF;
     height: 24px;
-    width: 500px;
+    width: 800px;
     border-radius: 4px;
 
     margin: 7px;
@@ -126,46 +158,59 @@ body {
 }
 
 .buttonSearch:active {
-    position: relative;
     right: 1px;
 }
 
-#liveStream {
-    background-color: #16a085;
-    width: 380px;
-    height: 800px;
-    color: black;
-    float: left;
-}
+/*
+
+elements of:
+#livestream
+
+*/
 
 #topic {
-    background-image: url("img/mannheim.jpg");
+    background-image: url("img/pattern2.jpg");
+    background-size: 500px 90px;
     clear: left;
-    width: 380px;
+    width: 500px;
     float: left;
 }
 
+/*
+
+sections of:
+#topic
+
+*/
+
 #topicAreaTitle {
-    width: 380px;
-    height: 30px;
-    font-size:16px;
+    width: 500px;
+    height: 20px;
     background: white;
-    color: black;
+
 }
 
 #topicAreaBody {
     height: 70px;
-    width: 380px;
+    width: 500px;
 }
 
 #topicAreaBottom {
-    width: 380px;
-    background: deepskyblue;
+    width: 500px;
+    background: silver;
 }
+
+
+/*
+
+sections of:
+#topicAreaBody
+
+*/
 
 #topicAreaLeft {
     height: 70px;
-    width: 180px;
+    width: 250px;
     font-size: 8px;
     color: white;
     float: left;
@@ -173,26 +218,71 @@ body {
 
 #topicAreaRight {
     height: 70px;
-    width: 180px;
+    width: 250px;
     float: left;
     color: white;
     font-style: oblique;
 }
 
+/*
+
+elements of:
+#topic
+
+*/
+.topicsElements {
+    background-color:rgba(0, 0, 0, 0.4);
+
+}
 #topicTitle {
+
+    font-size: 16px;
+    color: white;
+}
+#topicOwnerBox {
+    height: 5px;
+    width: 250px;
 }
 
 #topicOwner {
+    width: 30px;
     font-size: 10px;
-    height: 5px;
-    width: 180px;
-color: white;
+    color: white;
+    margin-left: 5px;
 }
 
-#topicVoteResults {
-    font-size: 12px;
-    width: 180px;
+#topicDescriptionBox {
+    width: 250px;
+}
+#topicDescription {
+    color: white;
+    margin-left: 5px;
+}
 
+#topicVoteResultsBox {
+    width: 250px;
+    height: 30px;
+}
+#topicVoteResults {
+    width: 100px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+#topicVoteResultsBox {
+    width: 250px;
+    height: 20px;
+}
+#draggableVoteOption {
+    width: 50px;
+    height:20px;
+    background : black;
+    color: white;
+    font-size: 13px;
+    float: left;
+    margin-left: 5px;
+    margin-right: 10px;
+   text-align: center;
 }
 
 .hrTopic {
@@ -201,6 +291,12 @@ color: white;
     background: lightgrey;
 }
 
+/*
+
+elements of:
+#comment
+
+*/
 
 .draggableTopicsComment {
     width: 260px;
@@ -209,13 +305,22 @@ color: white;
     background: black;
     color: white;
     font-size: 13px;
+    text-align: left;
 }
 
 .commentArrow {
-    width: 380px;
+    width: 500px;
     height: 10px;
-    background-color: #2c3e50;
+    background-color: grey;
 }
+
+
+/*
+
+elements of:
+#profile
+
+*/
 
 .buttonsRoleSelection {
     width: 38px;
