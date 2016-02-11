@@ -19,7 +19,7 @@
 
         <!-- Here ui_header -->
         <div id="header">
-            <h1>Dia HALLO CHRIS!!!! </h1>
+            <h1>Dia </h1>
         </div>
 
 
@@ -67,7 +67,7 @@
             <!-- Here ui_topics -->
             <div id="topics">
                 <button ng-click="fillTopics()">CLICKME</button>
-
+                <hr class="hrTopic">
 
                 <!-- Here ui_topic -->
                 <div id="topic">
@@ -82,13 +82,13 @@
                     <!--<img src="img/merkel.jpg" style="width:80px;height:88px;float:right" id="topicImage"> -->
 
 
-                        <div id="topicAreBody">
+                        <div id="topicAreaBody">
 
 
                             <div id="topicAreaLeft">
                                 <p id="topicOwner"> {{topic.owner}} : </p>
                                 <p>
-                                    Hier kommt dann die Beschreibung rein. Ich schreibe einfach mal so viel wie s geht. danmit das auch
+                                    Hier kommt dann die Beschreibung rein. Die Schriftgröße sollte anpassbar sein.
                                 </p>
                             </div>
 
@@ -98,25 +98,32 @@
                                 </ul>
 
                             </div>
+
+
                         </div>
 
                         <div id="topicAreaBottom">
 
                             <div id="commentOfTopic" style="float:top">
 
-                                <p class="pComment" ng-click="hideComment($index)"> Comments: </p>
+                                <p class="pComment" ng-click="toggleComment($index)"> Comments: </p>
 
-                                <div id="comment-{{$index}}">
+                                <comment-arrow ng-click="toggleComment($index)">
 
-                                    <div class="draggableTopicsComment ui-widget-content ui-draggable ui-draggable-handle"
-                                         style="position: relative;"
+                                </comment-arrow>
+
+                                <div class="comment-{{$index}}">
+
+                                    <div class="draggableTopicsComment"
                                          ng-repeat="a in topic.comments"
-                                         comment-section comment='a'>
+                                         comment-section comment='a'
+                                    >
+                                        hideComment($index);
 
                                     </div>
 
                                 </div>
-                                <hr/>
+                                <hr class="hrTopic">
                             </div>
 
                         </div>
@@ -128,7 +135,7 @@
             <!-- Here ui_background -->
             <div id="background">
 
-                <box-background class="boxBackground">
+                <box-background>
 
                 </box-background>
 

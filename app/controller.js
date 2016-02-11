@@ -60,8 +60,11 @@ dia.controller('simpleController', function ($scope) {
             });
     };
 
-    $scope.hideComment = function(id) {
-        $('#comment-' + id).toggle();
+    $scope.toggleComment = function(id) {
+        $('.comment-' + id).toggle();
     }
 
+    $scope.hideComment = function(id) {
+        $('.comment-' +id).hide();
+    }
 });

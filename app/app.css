@@ -141,8 +141,6 @@ body {
 }
 #topic
 {
-
-  height: 30px;
 }
 #topicAreaTitle
 {
@@ -152,6 +150,7 @@ body {
 #topicAreaBody
 {
   height: 24px;
+  float: top;
 }
 
 #topicAreaBottom
@@ -161,12 +160,15 @@ body {
 
 #topicAreaLeft
 {
+  height: 24px;
   width: 180px;
   float: left;
+  font-size: 8px;
 }
 
 #topicAreaRight
 {
+  height: 24px;
   width: 180px;
   float: left;
 }
@@ -174,6 +176,8 @@ body {
 {
   font-size: 17px;
   float: top;
+  background-color: white;
+  color: black;
 }
 #topicOwner
 {
@@ -188,6 +192,14 @@ body {
   float: left;
 }
 
+.hrTopic
+{
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
 
 .draggableTopicsComment
 {
@@ -200,6 +212,12 @@ body {
   font-size: 13px;
 }
 
+.commentArrow
+{
+  width:380px;
+  height: 10px;
+  background-color: #2c3e50;
+}
 .buttonsRoleSelection
 {
   width:38px;

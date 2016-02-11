@@ -38,4 +38,12 @@ dia.directive('boxBackground', function () {
     }
 })
 
+dia.directive('commentArrow', function () {
+    return {
+        restrict: 'E',
+        transclude: true,
+        template: '<div class="commentArrow"></div>'
+    }
+})
+
 
