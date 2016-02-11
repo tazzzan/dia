@@ -30,13 +30,7 @@ body {
   float:top;
 }
 
-#topics {
-  background-color: #16a085;
-  width: 380px;
-  height: 800px;
-  color: black;
-  float: left;
-}
+
 
 #background {
   background-color: #1abc9c;
@@ -138,10 +132,47 @@ body {
   right: 1px;
 }
 
+#topics {
+  background-color: #16a085;
+  width: 380px;
+  height: 800px;
+  color: black;
+  float: left;
+}
+#topic
+{
+
+  height: 30px;
+}
+#topicAreaTitle
+{
+  height: 4px;
+}
+
+#topicAreaBody
+{
+  height: 24px;
+}
+
+#topicAreaBottom
+{
+  float: top;
+}
+
+#topicAreaLeft
+{
+  width: 180px;
+  float: left;
+}
+
+#topicAreaRight
+{
+  width: 180px;
+  float: left;
+}
 #topicTitle
 {
   font-size: 17px;
-  height: 10px;
   float: top;
 }
 #topicOwner
@@ -153,7 +184,7 @@ body {
 
 #topicVoteResults
 {
-  font-size: 6px;
+  font-size: 12px;
   float: left;
 }
 

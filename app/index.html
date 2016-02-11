@@ -39,7 +39,7 @@
                 <p ng-repeat="x in profile | filter:name |orderBy:'uni'">{{ x }}</p>
 
 
-                <div id="roleSelection">    
+                <div id="roleSelection">
                     <button id="buttonRoleStandard" class="buttonsRoleSelection"> Standard </button>
                     <button id="buttonRolePublisher" class="buttonsRoleSelection"> Publisher</button>
                     <button id="buttonRoleDeveloper" class="buttonsRoleSelection"> Developer </button>
@@ -75,33 +75,51 @@
 
                     <div ng-repeat="topic in topics | filter:query">
 
-                        <h1 id="topicTitle"> {{ topic.name }} </h1>
+                        <div id="topicAreaTitle">
+                            <h1 id="topicTitle"> {{ topic.name }} </h1>
+                        </div>
 
-                        <p id="topicOwner"> {{topic.owner}} </p>
+                    <!--<img src="img/merkel.jpg" style="width:80px;height:88px;float:right" id="topicImage"> -->
 
-                        <img src="img/merkel.jpg" style="width:80px;height:88px;float:right" id="topicImage">
 
-                        <ul id="topicVoteResults">
-                            <li ng-repeat="a in topic.vts"> {{ a }}</li>
-                        </ul>
+                        <div id="topicAreBody">
 
-                        <div id="commentOfTopic" style="float:top">
 
-                            <p class="pComment" ng-click="hideComment($index)"> Comments: </p>
+                            <div id="topicAreaLeft">
+                                <p id="topicOwner"> {{topic.owner}} : </p>
+                                <p>
+                                    Hier kommt dann die Beschreibung rein. Ich schreibe einfach mal so viel wie s geht. danmit das auch
+                                </p>
+                            </div>
 
-                            <div id="comment-{{$index}}">
-
-                                <div class="draggableTopicsComment ui-widget-content ui-draggable ui-draggable-handle"
-                                     style="position: relative;"
-                                     ng-repeat="a in topic.comments"
-                                     comment-section comment='a'>
-
-                                </div>
+                            <div id="topicAreaRight">
+                                <ul id="topicVoteResults">
+                                    <li ng-repeat="a in topic.vts"> {{ a }}</li>
+                                </ul>
 
                             </div>
                         </div>
 
-                        <hr/>
+                        <div id="topicAreaBottom">
+
+                            <div id="commentOfTopic" style="float:top">
+
+                                <p class="pComment" ng-click="hideComment($index)"> Comments: </p>
+
+                                <div id="comment-{{$index}}">
+
+                                    <div class="draggableTopicsComment ui-widget-content ui-draggable ui-draggable-handle"
+                                         style="position: relative;"
+                                         ng-repeat="a in topic.comments"
+                                         comment-section comment='a'>
+
+                                    </div>
+
+                                </div>
+                                <hr/>
+                            </div>
+
+                        </div>
 
                     </div>
                 </div>
