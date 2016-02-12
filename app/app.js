@@ -70,4 +70,19 @@ dia.directive('hideElement', function () {
     }
 });
 
+dia.directive('dropArea', function () {
+    return {
+        restrict: 'A',
+        transclude: true,
+        template: '<div id="dropArea"> ökjö </div>',
+        link: function (scope, element, attrs) {
+            element.parent().bind('mouseenter', function () {
+                element.show();
+            });
+            element.parent().bind('mouseleave', function () {
+                element.hide();
+            });
+        }
+    }
+});
 

@@ -184,9 +184,10 @@ sections of:
 */
 
 #topicAreaTitle {
+    clear:left;
     width: 500px;
     height: 20px;
-    background: white;
+    background-color:rgba(255, 255, 255, 0.8);
 
 }
 
@@ -197,7 +198,6 @@ sections of:
 
 #topicAreaBottom {
     width: 500px;
-    background: silver;
 }
 
 
@@ -239,6 +239,12 @@ elements of:
     font-size: 16px;
     color: white;
 }
+
+#dropArea {
+    border: 2px;
+    border-style: solid;
+    border-color: crimson;
+}
 #topicOwnerBox {
     height: 5px;
     width: 250px;
@@ -274,12 +280,12 @@ elements of:
     height: 20px;
 }
 #draggableVoteOption {
+    float: left;
     width: 50px;
     height:20px;
-    background : black;
+    background : dimgrey;
     color: white;
     font-size: 13px;
-    float: left;
     margin-left: 5px;
     margin-right: 10px;
    text-align: center;
@@ -293,13 +299,35 @@ elements of:
 
 /*
 
+sections of:
+äcomment
+
+*/
+
+#commentsSection {
+    width: 500px;
+    background: silver;
+}
+
+#commentsActual {
+    clear: left;
+    width: 250px;
+    float: left;
+}
+
+#commentsBest {
+    float: left;
+    width: 250px;
+}
+/*
+
 elements of:
 #comment
 
 */
 
 .draggableTopicsComment {
-    width: 260px;
+    width: 130px;
     height: 20px;
     margin-left: 20px;
     background: black;

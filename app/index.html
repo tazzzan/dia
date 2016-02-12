@@ -1,5 +1,10 @@
 <html ng-app="dia">
 
+<meta charset="utf-8">
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
 
 
@@ -20,13 +25,19 @@
 
         <!-- Here ui_header -->
         <div id="header">
-            <h1>Dia </h1>
+            <h1 showon-hoverparent>Dia </h1>
         </div>
 
 
         <!-- Here ui_sidebar -->
         <div id="sidebar">
             <p> BLA </p>
+            <div id="favoriteTopics"}>
+
+            </div>
+            <div id="messagesArea"}>
+
+            </div>
         </div>
 
 
@@ -78,7 +89,8 @@
                     <div ng-repeat="topic in topics | filter:query">
 
                         <div  id="topicAreaTitle">
-                            <p> {{ topic.name }} </p>
+                            <p drop-area> {{ topic.name }} </p>
+
                         </div>
 
 
@@ -130,15 +142,32 @@
 
                             <div id="commentsSection-{{$index}}" >
 
+                                <div id="commentsActual">
 
-                                <div class="comment">
+                                    <div class="comment">
 
-                                    <div
-                                         ng-repeat="c in topic.comments"
-                                         comment-section comment='c'>
+                                        <div
+                                                ng-repeat="c in topic.comments"
+                                                comment-section comment='c'>
+                                        </div>
+
                                     </div>
 
                                 </div>
+
+                                <div id="commentsBest">
+
+                                    <div class="comment">
+
+                                        <div
+                                                ng-repeat="c in topic.comments"
+                                                comment-section comment='c'>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
 
                                 <hr class="hrTopic" >
 
@@ -159,6 +188,39 @@
 
 
                 <p>background...</p>
+                <style>
+                    #draggable2 { width: 90px; height: 90px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; background-color: white }
+                    #droppable2 { width: 120px; height: 120px; padding: 0.5em; float: left; margin: 10px; background-color: grey}
+                    h3 { clear: left; }
+                </style>
+                <script>
+                    $(function() {
+                        $( "#draggable2" ).draggable();
+                        $( "#droppable2" ).droppable({
+                            accept: "#draggable2",
+                            activeClass: "ui-state-default",
+                            drop: function( event, ui ) {
+                                $( this )
+                                        .addClass( "ui-state-highlight" )
+                                        .find( "p" )
+                                        .html( "Dropped!" );
+                            }
+                        });
+                    });
+                </script>
+
+                <h3>Feedback on hover:</h3>
+
+
+                <h3>Feedback on activating draggable:</h3>
+
+                <div id="draggable2" class="ui-widget-content">
+                    <p>Drag me to my target</p>
+                </div>
+
+                <div id="droppable2" class="ui-widget-header">
+                    <p>Drop here</p>
+                </div>
 
 
             </div>
