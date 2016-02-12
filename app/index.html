@@ -28,6 +28,14 @@
             <h1>Dia </h1>
         </div>
 
+        <!-- Here ui_search -->
+        <div id="search">
+            <input class="inputBoxSearch" type="text" ng-model="query"/>
+            <button class="buttonSearch" ng-click="search()">SEARCH</button>
+            {{ query }}
+        </div>
+
+
 
         <!-- Here ui_sidebar -->
         <div id="sidebar">
@@ -74,12 +82,6 @@
         </div>
 
 
-        <!-- Here ui_search -->
-        <div id="search">
-            <input class="inputBoxSearch" type="text" ng-model="query"/>
-            <button class="buttonSearch" ng-click="search()">SEARCH</button>
-            {{ query }}
-        </div>
 
 
         <!-- Here ui_main -->

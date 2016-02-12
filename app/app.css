@@ -28,24 +28,24 @@ body {
 }
 
 #header {
-    background-color: #0000ff;
+    background-color: green;
+    vertical-align: top;
     width: 1280px;
     height: 30px;
     color: #ecf0f1;
+    font-size: 14px;
 }
 
 #search {
-    background-color: #0000ff;
-    width: 990px;
+    background-color: green;
+    width: 1280px;
     height: 40px;
-    float: top;
-    float: left;
+    position: relative;
 }
 
 #main {
     padding: 0px 0px 0px 80px;
     width: 990px;
-    float: top;
 }
 
 #liveStream {
@@ -99,6 +99,8 @@ elements of:
 */
 
 .inputBoxSearch {
+    position: absolute;
+    left: 125px;
     font-family: Arial, sans-serif;
     font-size: 11px;
     background-color: #FFFFFF;
@@ -126,11 +128,13 @@ elements of:
 }
 
 .buttonSearch {
+    position: absolute;
+    left: 858px;
+    top: 7px;
     width: 74px;
     height: 24px;
     font-size: 11px;
     text-decoration: inherit;
-    margin-left: -85px;
     -webkit-border-radius: 4px 4px 4px 4px;
     -moz-border-radius: 4px 4px 4px 4px;
     border-radius: 4px 4px 4px 4px;
