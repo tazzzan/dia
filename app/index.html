@@ -25,7 +25,7 @@
 
         <!-- Here ui_header -->
         <div id="header">
-            <h1 showon-hoverparent>Dia </h1>
+            <h1>Dia </h1>
         </div>
 
 
@@ -33,6 +33,10 @@
         <div id="sidebar">
             <p> BLA </p>
             <div id="favoriteTopics"}>
+
+                <div id="droppable2" class="ui-widget-header">
+                    <p>Drop here</p>
+                </div>
 
             </div>
             <div id="messagesArea"}>
@@ -83,13 +87,14 @@
 
             <!-- Here ui_topics -->
             <div id="liveStream">
+
                 <!-- Here ui_topic -->
                 <div id="topic">
 
                     <div ng-repeat="topic in topics | filter:query">
 
                         <div  id="topicAreaTitle">
-                            <p drop-area> {{ topic.name }} </p>
+                            <p> {{ topic.name }} </p>
 
                         </div>
 
@@ -195,7 +200,7 @@
                 </style>
                 <script>
                     $(function() {
-                        $( "#draggable2" ).draggable();
+                        $( "#draggable2" ).draggable({appendTo: 'body', revert: true});
                         $( "#droppable2" ).droppable({
                             accept: "#draggable2",
                             activeClass: "ui-state-default",
@@ -209,18 +214,12 @@
                     });
                 </script>
 
-                <h3>Feedback on hover:</h3>
-
-
-                <h3>Feedback on activating draggable:</h3>
+                <h3 id="h33">Feedback on activating draggable:</h3>
 
                 <div id="draggable2" class="ui-widget-content">
                     <p>Drag me to my target</p>
                 </div>
 
-                <div id="droppable2" class="ui-widget-header">
-                    <p>Drop here</p>
-                </div>
 
 
             </div>

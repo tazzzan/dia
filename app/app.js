@@ -1,5 +1,16 @@
 var dia = angular.module("dia", []);
 
+dia.directive('topicSection', function () {
+    return {
+        restrict: 'A',
+        transclude: true,
+        scope: {topicbody: '='},
+        templateURL:'view1.html',
+        link: function (scope, element, attrs) {
+            $(element).draggable({appendTo: 'body', revert: true});
+        }
+    };
+});
 
 dia.directive('commentSection', function () {
     return {
@@ -28,13 +39,13 @@ dia.directive('voteoptionSection', function () {
 
 dia.directive('makeDraggable', function () {
     return {
-        restrict: 'AE',
+        restrict: 'E',
         transclude: true,
-        link: function (element, attrs) {
+        link: function (scope, element, attrs) {
             $(element).draggable({appendTo: 'body', revert: true});
         }
     }
-})
+});
 
 dia.directive('boxBackground', function () {
     return {
@@ -66,22 +77,6 @@ dia.directive('hideElement', function () {
         transclude: true,
         link: function (element, attrs) {
             $(element).hide();
-        }
-    }
-});
-
-dia.directive('dropArea', function () {
-    return {
-        restrict: 'A',
-        transclude: true,
-        template: '<div id="dropArea"> ökjö </div>',
-        link: function (scope, element, attrs) {
-            element.parent().bind('mouseenter', function () {
-                element.show();
-            });
-            element.parent().bind('mouseleave', function () {
-                element.hide();
-            });
         }
     }
 });

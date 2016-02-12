@@ -36,7 +36,7 @@ body {
 
 #search {
     background-color: #0000ff;
-    width: 1040px;
+    width: 990px;
     height: 40px;
     float: top;
     float: left;
@@ -44,7 +44,7 @@ body {
 
 #main {
     padding: 0px 0px 0px 80px;
-    width: 1040px;
+    width: 990px;
     float: top;
 }
 
@@ -58,7 +58,7 @@ body {
 
 #background {
     background-color: #1abc9c;
-    width: 500px;
+    width: 450px;
     height: 800px;
     color: black;
     float: right;
@@ -86,7 +86,7 @@ body {
 
 #sidebar {
     background-color: #0000ff;
-    width: 120px;
+    width: 170px;
     height: 900px;
     float: right;
 }
@@ -169,7 +169,7 @@ elements of:
 */
 
 #topic {
-    background-image: url("img/pattern2.jpg");
+    background-image: url("img/rock.jpg");
     background-size: 500px 90px;
     clear: left;
     width: 500px;

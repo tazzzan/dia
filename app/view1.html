@@ -1,28 +1,88 @@
-<div class="container">
-    <h2>View 0</h2>
-    Name:
 
-    <br/>
-    <input type="text" ng-model="name" /> {{name}}
-
-
-    <br />
-    <ul>
-        <li ng-repeat="person in persons | filter:name | orderBy:uni">
-            {{ person.name | uppercase }}
-            {{ person.uni | lowercase}} </li>
-    </ul>
-
-    <br/>
-    Person Name:
-    <br/>
-    <input type="text" ng-model="newPerson.name" />
-    <br />
-    Person Uni:
-    <br/>
-    <input type="text" ng-model="newPerson.uni" />
-    <br/>
-    <button ng-click="addPerson()">AddPerson</button>
-    <a href="#/view2">View2</a>
+<div  id="topicAreaTitle">
+    <p> {{ topicbody.name }} </p>
 
 </div>
+
+
+<div id="topicAreaBody">
+
+    <div id="topicAreaLeft">
+
+        <div id="topicOwnerBox">
+            <div id="topicOwner" class="topicsElements"><p> {{topic.owner}}</p> </div>
+        </div>
+
+        <div id="topicDescriptionBox">
+            <p id="topicDescription" class="topicsElements">
+                Hier kommt dann die Beschreibung rein. Die Schriftgroesse sollte anpassbar sein.
+                Ich hoffe, dass die Texte hier nicht allzu lang werden.
+            </p>
+        </div>
+
+    </div>
+
+    <div id="topicAreaRight">
+
+        <div id="topicVoteResultsBox">
+            <ul id="topicVoteResults" class="topicsElements">
+                <li ng-repeat="a in topic.vts"> {{ a }}</li>
+            </ul>
+        </div>
+
+        <div id="topicVoteOptionsBox">
+
+            <div class="voteOption">
+
+                <div
+                        ng-repeat="b in topic.voteOptions"
+                        voteoption-section voteoption='b'>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="topicAreaBottom">
+
+    <comment-arrow ng-click="toggleCommentsSection($index)">
+    </comment-arrow>
+
+    <div id="commentsSection-{{$index}}" >
+
+        <div id="commentsActual">
+
+            <div class="comment">
+
+                <div
+                        ng-repeat="c in topic.comments"
+                        comment-section comment='c'>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="commentsBest">
+
+            <div class="comment">
+
+                <div
+                        ng-repeat="c in topic.comments"
+                        comment-section comment='c'>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <hr class="hrTopic" >
+
+    </div>
+
+</div>
+s

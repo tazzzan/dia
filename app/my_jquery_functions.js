@@ -16,3 +16,7 @@ $(document).ready(function(){
 $(document).ready(function() {
     $( ".draggable" ).draggable({ revert: true});
 });
+
+$(document).ready(function() {
+    $("#topicAreaTitle").draggable({appendTo: 'body', revert: true});
+});
