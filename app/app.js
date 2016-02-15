@@ -37,6 +37,31 @@ dia.directive('voteoptionSection', function () {
     };
 });
 
+dia.directive('dragDrop', function () {
+    return {
+        restrict: 'E',
+        transclude: true,
+        scope: {targetObject:'@'},
+        link: function(scope, element) {
+            $( element ).draggable({appendTo: 'body', revert: true});
+            var targetId = scope.targetObject;
+            $("#" + targetId).droppable({
+                accept: $(element),
+                activeClass: "ui-state-default",
+                drop: function( event, ui ) {
+                    $( this )
+                        .addClass( "ui-state-highlight" )
+                        .find( "p" )
+                        .html( "Dropped!" );
+                }
+            });
+        }
+
+    }
+
+
+})
+
 dia.directive('makeDraggable', function () {
     return {
         restrict: 'E',

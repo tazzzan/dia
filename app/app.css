@@ -128,7 +128,7 @@ elements of:
 }
 
 .buttonSearch {
-    position: absolute;hjkjhkjh
+    position: absolute;
     left: 858px;
     top: 7px;
     width: 74px;
@@ -173,7 +173,7 @@ elements of:
 */
 
 #topic {
-    background-image: url("img/rock.jpg");
+    background-color: green;
     background-size: 500px 90px;
     clear: left;
     width: 500px;

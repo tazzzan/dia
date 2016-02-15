@@ -126,17 +126,19 @@
                                     </ul>
                                 </div>
 
-                                <div id="topicVoteOptionsBox">
 
-                                    <div class="voteOption">
 
-                                        <div
-                                             ng-repeat="b in topic.voteOptions"
-                                             voteoption-section voteoption='b'>
+                                    <div id="topicVoteOptionsBox">
+
+                                        <div class="voteOption" drag-drop target-object="droppable2" id="draggable3" class="ui-widget-content">
+
+                                            <div
+                                                 ng-repeat="b in topic.voteOptions"
+                                                 voteoption-section voteoption='b'>
+                                            </div>
+
                                         </div>
-
                                     </div>
-                                </div>
 
                             </div>
 
@@ -196,32 +198,23 @@
 
                 <p>background...</p>
                 <style>
-                    #draggable2 { width: 90px; height: 90px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; background-color: white }
+                    #draggable2 { width: 90px; height: 90px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; background-color: purple }
                     #droppable2 { width: 120px; height: 120px; padding: 0.5em; float: left; margin: 10px; background-color: grey}
                     h3 { clear: left; }
                 </style>
-                <script>
-                    $(function() {
-                        $( "#draggable2" ).draggable({appendTo: 'body', revert: true});
-                        $( "#droppable2" ).droppable({
-                            accept: "#draggable2",
-                            activeClass: "ui-state-default",
-                            drop: function( event, ui ) {
-                                $( this )
-                                        .addClass( "ui-state-highlight" )
-                                        .find( "p" )
-                                        .html( "Dropped!" );
-                            }
-                        });
-                    });
-                </script>
+
 
                 <h3 id="h33">Feedback on activating draggable:</h3>
 
-                <div id="draggable2" class="ui-widget-content">
-                    <p>Drag me to my target</p>
-                </div>
 
+
+                <drag-drop target-object="droppable2" id="draggable2" class="ui-widget-content">
+                    <div>
+
+                        <p>Drag me to my target</p>
+
+                    </div>
+                </drag-drop>
 
 
             </div>
