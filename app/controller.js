@@ -1,24 +1,73 @@
 
+
 dia.controller('simpleController', function ($scope) {
-    $scope.profile = ["Ilja Lichtenberg", "Strathclyde", "25"];
-    $scope.selectedName = $scope.profile[0];
-    $scope.articleTopic = "";
+
+
+    $scope.messsage = "hello World";
+
+
+    $scope.profile = {};
+    $scope.profiles = [];
+
+    $scope.livestream = {};
+
     $scope.topic = {};
+    $scope.firstLevelTopic = {};
+    $scope.secondLevelTopic = {};
+    $scope.thirdLevelTopic = {};
+
+    $scope.background = {};
+    $scope.backgroundSource = {};
+
+    $scope.vote = {};
+    $scope.userVote = {};
+    $scope.commentVote = {};
+    $scope.topicVote = {};
+    $scope.backgroundVote = {};
     $scope.voteOption = {};
 
+    $scope.comment = {};
+    $scope.topicComment = {};
+    $scope.backgroundComment = {};
+    $scope.commentComment = {};
 
-    $scope.addPerson = function () {
-        $scope.persons.push(
-            {   name:$scope.newPerson.name,
-                uni: $scope.newPerson.uni
-            });
-    };
+    $scope.message = {};
+    $scope.spectrumMessage = {};
+    $scope.privateMessage = {};
+
+    $scope.media = {};
+    $scope.image = {};
+    $scope.video = {};
+
+
+
+
+    $scope.selectedName = $scope.profile[0];
+    $scope.articleTopic = "";
 
     $scope.query = "";
+    $scope.profileName = "";
+    $scope.profileUni = "";
 
-    $scope.search = function () {
+    $scope.createProfile = function (name, uni) {
+        $scope.profiles.push(
+            $scope.newProfile = new Profile(name, uni)
+            )
 
+        console.log("blabla: " + $scope.profiles[0].name + $scope.profiles[0].uni + "");
     };
+
+    $scope.showExistingProfiles = function () {
+        console.log($scope.profiles[0].name + $scope.profiles[0].uni);
+        return $scope.profiles;
+    }
+
+
+
+    function Profile(name, uni) {
+        this.name = name;
+        this.uni = uni;
+    }
 
     function Topic(name, owner, vts, voteOptions, comments) {
         this.name = name;
@@ -46,7 +95,7 @@ dia.controller('simpleController', function ($scope) {
             $scope.option1 = new VoteOption("Yes"),
             $scope.option2 = new VoteOption("No")
         )
-    }
+    };
 
 
     $scope.fillTopics = function () {

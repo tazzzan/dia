@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="login.css">
+
+
+<div>
+
+    <!-- Here ui_header -->
+
+    <div id="header">
+        <h1>Dia </h1>
+    </div>
+
+    <!-- Here ui_search -->
+
+    <div id="search">
+
+    </div>
+
+    <!-- Here ui_main -->
+    <div id="main">
+
+        <!-- Here ui_livestream -->
+
+        <div id="liveStream">
+
+            <button ng-click="fillTopics()" >add topics</button>
+
+            <div ui-view="liveStream"></div>
+        </div>
+
+        <!-- Here ui_register_login -->
+
+        <div id="registerLogin" >
+
+            <div class="container">
+                <div class="flat-form">
+
+                    <ul class="tabs">
+                        <li>
+                            <a
+                                    ui-sref-active="active"
+                                    ui-sref=".loginTab">Login
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                    ui-sref-active="active"
+                                    ui-sref=".registerTab">Register
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                    ui-sref-active="active"
+                                    ui-sref=".resetTab">Reset Password
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div id="login">
+                        <div ui-view="loginArea"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

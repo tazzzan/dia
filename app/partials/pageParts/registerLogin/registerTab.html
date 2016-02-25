@@ -1,0 +1,20 @@
+<div>
+
+    <h1>Welcome!</h1>
+    <p>
+        Hier steht ein schlauer Text
+    </p>
+    <form>
+        <ul>
+            <li>
+                <input type="text" placeholder="Username" ng-model="profileName"/>
+            </li>
+            <li>
+                <input type="password" placeholder="Uni" ng-model="profileUni" />
+            </li>
+            <li>
+                <input type="submit" value="Sign Up" class="button" ng-click="createProfile(profileName, profileUni)"/>
+            </li>
+        </ul>
+    </form>
+</div>

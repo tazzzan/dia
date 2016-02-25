@@ -2,228 +2,32 @@
 
 <meta charset="utf-8">
 
-
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
 
+<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-
-<link rel="stylesheet" href="app.css">
 <script src="my_jquery_functions.js"></script>
-
-<body>
-
-
-<div ng-controller="simpleController">
-
-    <!-- Here ui_container -->
-    <div id="container">
-
-
-        <!-- Here ui_header -->
-        <div id="header">
-            <h1>Dia </h1>
-        </div>
-
-        <!-- Here ui_search -->
-        <div id="search">
-            <input class="inputBoxSearch" type="text" ng-model="query"/>
-            <button class="buttonSearch" ng-click="search()">SEARCH</button>
-            {{ query }}
-        </div>
-
-
-
-        <!-- Here ui_sidebar -->
-        <div id="sidebar">
-            <p> BLA </p>
-            <div id="favoriteTopics"}>
-
-                <div id="droppable2" class="ui-widget-header">
-                    <p>Drop here</p>
-                </div>
-
-            </div>
-            <div id="messagesArea"}>
-
-            </div>
-        </div>
-
-
-        <!-- Here ui_left-->
-        <div id="left">
-
-
-            <!-- Here ui_profile -->
-            <div id="profile">
-                </br>
-                <p ng-repeat="x in profile | filter:name |orderBy:'uni'">{{ x }}</p>
-
-
-                <div id="roleSelection">
-                    <button id="buttonRoleStandard" class="buttonsRoleSelection"> Standard </button>
-                    <button id="buttonRolePublisher" class="buttonsRoleSelection"> Publisher</button>
-                    <button id="buttonRoleDeveloper" class="buttonsRoleSelection"> Developer </button>
-                </div>
-
-            </div>
-
-            <!-- Here ui_nav -->
-            <div id="nav">
-                <button ng-click="fillTopics()" >add topics</button>
-                <button ng-click="fillVoteOptions()" >add voteOptions</button>
-
-            </div>
-
-
-        </div>
-
-
-
-
-        <!-- Here ui_main -->
-        <div id="main">
-
-            <!-- Here ui_topics -->
-            <div id="liveStream">
-
-                <!-- Here ui_topic -->
-                <div id="topic">
-
-                    <div ng-repeat="topic in topics | filter:query">
-
-                        <div  id="topicAreaTitle">
-                            <p> {{ topic.name }} </p>
-
-                        </div>
-
-
-                        <div id="topicAreaBody">
-
-                            <div id="topicAreaLeft">
-
-                                <div id="topicOwnerBox">
-                                    <div id="topicOwner" class="topicsElements"><p> {{topic.owner}}</p> </div>
-                                </div>
-
-                                <div id="topicDescriptionBox">
-                                    <p id="topicDescription" class="topicsElements">
-                                        Hier kommt dann die Beschreibung rein. Die Schriftgroesse sollte anpassbar sein.
-                                        Ich hoffe, dass die Texte hier nicht allzu lang werden.
-                                    </p>
-                                </div>
-
-                            </div>
-
-                            <div id="topicAreaRight">
-
-                                <div id="topicVoteResultsBox">
-                                    <ul id="topicVoteResults" class="topicsElements">
-                                        <li ng-repeat="a in topic.vts"> {{ a }}</li>
-                                    </ul>
-                                </div>
-
-
-
-                                    <div id="topicVoteOptionsBox">
-
-                                        <div class="voteOption" drag-drop target-object="droppable2" id="draggable3" class="ui-widget-content">
-
-                                            <div
-                                                 ng-repeat="b in topic.voteOptions"
-                                                 voteoption-section voteoption='b'>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                            </div>
-
-                        </div>
-
-                        <div id="topicAreaBottom">
-
-                            <comment-arrow ng-click="toggleCommentsSection($index)">
-                            </comment-arrow>
-
-                            <div id="commentsSection-{{$index}}" >
-
-                                <div id="commentsActual">
-
-                                    <div class="comment">
-
-                                        <div
-                                                ng-repeat="c in topic.comments"
-                                                comment-section comment='c'>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div id="commentsBest">
-
-                                    <div class="comment">
-
-                                        <div
-                                                ng-repeat="c in topic.comments"
-                                                comment-section comment='c'>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-                                <hr class="hrTopic" >
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Here ui_background -->
-            <div id="background">
-
-                <box-background>
-
-                </box-background>
-
-
-                <p>background...</p>
-                <style>
-                    #draggable2 { width: 90px; height: 90px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; background-color: purple }
-                    #droppable2 { width: 120px; height: 120px; padding: 0.5em; float: left; margin: 10px; background-color: grey}
-                    h3 { clear: left; }
-                </style>
-
-
-                <h3 id="h33">Feedback on activating draggable:</h3>
-
-
-
-                <drag-drop target-object="droppable2" id="draggable2" class="ui-widget-content">
-                    <div>
-
-                        <p>Drag me to my target</p>
-
-                    </div>
-                </drag-drop>
-
-
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <script src="app.js"></script>
 <script src="controller.js"></script>
+
+
+<style>
+#draggable2 { width: 90px; height: 90px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; background-color: purple }
+#droppable2 { width: 120px; height: 120px; padding: 0.5em; float: left; margin: 10px; background-color: grey}
+h3 { clear: left; }
+</style>
+
+
+<body ng-controller="simpleController">
+
+    <div ui-view></div>
+
 </body>
+
 </html>

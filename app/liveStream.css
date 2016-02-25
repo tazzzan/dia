@@ -1,0 +1,189 @@
+#liveStream {
+    background-color: white;
+    width: 50%;
+    height: 80%;
+    color: black;
+    float: left;
+}
+
+/*
+
+elements of:
+#livestream
+
+*/
+
+#topic {
+    background-color: green;
+    background-size: 500px 90px;
+    clear: left;
+    width: 100%;
+    float: left;
+}
+
+/*
+
+sections of:
+#topic
+
+*/
+
+#topicAreaTitle {
+    clear:left;
+    width: 100%;
+    height: 20px;
+    background-color:rgba(255, 255, 255, 0.8);
+
+}
+
+#topicAreaBody {
+    height: 70px;
+    width: 100%;
+}
+
+#topicAreaBottom {
+    width: 100%;
+}
+
+
+/*
+
+sections of:
+#topicAreaBody
+
+*/
+
+#topicAreaLeft {
+    height: 70px;
+    width: 50%;
+    font-size: 8px;
+    color: white;
+    float: left;
+}
+
+#topicAreaRight {
+    height: 70px;
+    width: 50%;
+    float: left;
+    color: white;
+    font-style: oblique;
+}
+
+/*
+
+elements of:
+#topic
+
+*/
+.topicsElements {
+    background-color:rgba(0, 0, 0, 0.4);
+
+}
+#topicTitle {
+
+    font-size: 16px;
+    color: white;
+}
+
+#dropArea {
+    border: 2px;
+    border-style: solid;
+    border-color: crimson;
+}
+#topicOwnerBox {
+    height: 5px;
+    width: 50%;
+}
+
+#topicOwner {
+    width: 30px;
+    font-size: 10px;
+    color: white;
+    margin-left: 5px;
+}
+
+#topicDescriptionBox {
+    width: 50%;
+}
+#topicDescription {
+    color: white;
+    margin-left: 5px;
+}
+
+#topicVoteResultsBox {
+    width: 50%;
+    height: 30px;
+}
+#topicVoteResults {
+    width: 50%;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+#topicVoteResultsBox {
+    width: 50%;
+    height: 20px;
+}
+#draggableVoteOption {
+
+    float: left;
+    width: 50px;
+    height:20px;
+    background : dimgrey;
+    color: white;
+    font-size: 13px;
+    margin-left: 5px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.hrTopic {
+    border: 0;
+    height: 1px;
+    background: lightgrey;
+}
+
+/*
+
+sections of:
+äcomment
+
+*/
+
+#commentsSection {
+    width: 100%;
+    background: silver;
+}
+
+#commentsActual {
+    clear: left;
+    width: 50%;
+    float: left;
+}
+
+#commentsBest {
+    float: left;
+    width: 50%;
+}
+/*
+
+elements of:
+#comment
+
+*/
+
+.draggableTopicsComment {
+    width: 130px;
+    height: 20px;
+    margin-left: 20px;
+    background: black;
+    color: white;
+    font-size: 13px;
+    text-align: left;
+}
+
+.commentArrow {
+    width: 100%;
+    height: 10px;
+    background-color: grey;
+}

@@ -1,4 +1,63 @@
-var dia = angular.module("dia", []);
+var dia =  angular.module('dia', ['ui.router'])
+
+    .config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
+
+        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.when('/login','/login/loginTab');
+        $urlRouterProvider.when('/main', '/main/seekerAndVoter');
+
+        $stateProvider.state('login', {
+            url: '/login',
+            templateUrl: 'partials/login.html'
+        });
+
+
+
+        $stateProvider.state('login.loginTab', {
+            url:'/loginTab',
+            views: {
+                "loginArea": {templateUrl: 'partials/pageParts/registerLogin/loginTab.html'},
+                "liveStream": {templateUrl: 'partials/liveStream.html'}
+            }
+        });
+
+        $stateProvider.state('login.registerTab', {
+            url:'/registerTab',
+            views: {
+                "loginArea": {templateUrl: 'partials/pageParts/registerLogin/registerTab.html'},
+                "liveStream": {templateUrl: 'partials/liveStream.html'}
+            }
+        });
+
+        $stateProvider.state('login.resetTab', {
+            url:'/resetTab',
+            views: {
+                "loginArea": {templateUrl: 'partials/pageParts/registerLogin/resetTab.html'},
+                "liveStream": {templateUrl: 'partials/liveStream.html'}
+            }
+        });
+
+
+
+
+
+        $stateProvider.state('main', {
+            url: '/main',
+            templateUrl: 'partials/main.html',
+
+        });
+
+        $stateProvider.state('main.seekerAndVoter', {
+            url: '/seekerAndVoter',
+            views: {
+                "liveStream": {templateUrl: 'partials/liveStream.html'}
+            }
+        })
+
+    }])
+
+
+
 
 dia.directive('topicSection', function () {
     return {
@@ -30,31 +89,32 @@ dia.directive('voteoptionSection', function () {
         restrict: 'A',
         transclude: true,
         scope: {voteoption: '='},
-        template: '<p id="draggableVoteOption">{{ voteoption }}</p>',
-        link: function (scope, element, attrs) {
-            $(element).draggable({appendTo: 'body', revert: true});
-        }
+        template: '<div id="draggableVoteOption" drag-drop target-object="droppable2">{{ voteoption }}</div>',
+
+
     };
 });
 
 dia.directive('dragDrop', function () {
     return {
-        restrict: 'E',
+        restrict: 'A',
         transclude: true,
         scope: {targetObject:'@'},
         link: function(scope, element) {
             $( element ).draggable({appendTo: 'body', revert: true});
-            var targetId = scope.targetObject;
-            $("#" + targetId).droppable({
-                accept: $(element),
+            var targetId = "#" + scope.targetObject;
+            $(targetId).droppable({
+
+                accept: $( element ),
                 activeClass: "ui-state-default",
-                drop: function( event, ui ) {
-                    $( this )
-                        .addClass( "ui-state-highlight" )
-                        .find( "p" )
-                        .html( "Dropped!" );
+                drop: function (event, ui) {
+                    $(targetId)
+                        .addClass("ui-state-highlight")
+                        .find("p")
+                        .html("Dropped!");
                 }
             });
+
         }
 
     }
@@ -94,15 +154,4 @@ dia.directive('commentArrow', function () {
     }
 });
 
-
-
-dia.directive('hideElement', function () {
-    return {
-        restrict: 'A',
-        transclude: true,
-        link: function (element, attrs) {
-            $(element).hide();
-        }
-    }
-});
 
