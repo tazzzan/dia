@@ -1,12 +1,6 @@
-<html>
-
-<meta charset="utf-8">
 
 
-<link rel="stylesheet" href="app.css">
-
-
-<div>
+<body>
 
     <!-- Here ui_container -->
     <div id="container">
@@ -80,35 +74,10 @@
 
         <!-- Here ui_main -->
         <div id="main">
+            <div ui-view="main"></div>
 
-            <!-- Here ui_livestream -->
-            <div id="liveStream">
-                <div ui-view="liveStream"></div>
-            </div>
-
-            <!-- Here ui_background -->
-            <div id="background">
-
-                <box-background>
-
-                </box-background>
-
-
-                <p>background...</p>
-
-
-                <h3 id="h33">Feedback on activating draggable:</h3>
-
-
-
-                <div drag-drop target-object="droppable2" id="draggable2" class="ui-widget-content">
-
-
-                </div>
-
-            </div>
         </div>
-    </div>
-</div>
 
-</html>
+
+    </div>
+</body>

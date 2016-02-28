@@ -15,10 +15,6 @@ body
 
 */
 
-body {
-    background-color: lightgrey;
-}
-
 #container {
     background-color: white;
     width: 1280px;
@@ -48,16 +44,14 @@ body {
     width: 990px;
 }
 
-#liveStream {
-    background-color: #16a085;
-    width: 500px;
-    height: 800px;
+#liveStreamAreaAtMain {
+    background-color: purple;
+    width: 50%;
+    height: 80%;
     color: black;
-    float: left;
 }
-
 #background {
-    background-color: #1abc9c;
+    background-color: yellow;
     width: 450px;
     height: 800px;
     color: black;

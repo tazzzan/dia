@@ -2,9 +2,13 @@ var dia =  angular.module('dia', ['ui.router'])
 
     .config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
 
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/login/loginTab');
         $urlRouterProvider.when('/login','/login/loginTab');
-        $urlRouterProvider.when('/main', '/main/seekerAndVoter');
+        $urlRouterProvider.when('/main', '/role/seekerAndVoter/start');
+
+
+
+
 
         $stateProvider.state('login', {
             url: '/login',
@@ -17,7 +21,7 @@ var dia =  angular.module('dia', ['ui.router'])
             url:'/loginTab',
             views: {
                 "loginArea": {templateUrl: 'partials/pageParts/registerLogin/loginTab.html'},
-                "liveStream": {templateUrl: 'partials/liveStream.html'}
+                "liveStream": {templateUrl: 'partials/pageParts/main/seekerAndVoter/liveStream/liveStream.html'}
             }
         });
 
@@ -25,7 +29,7 @@ var dia =  angular.module('dia', ['ui.router'])
             url:'/registerTab',
             views: {
                 "loginArea": {templateUrl: 'partials/pageParts/registerLogin/registerTab.html'},
-                "liveStream": {templateUrl: 'partials/liveStream.html'}
+                "liveStream": {templateUrl: 'partials/pageParts/main/seekerAndVoter/liveStream/liveStream.html'}
             }
         });
 
@@ -33,8 +37,16 @@ var dia =  angular.module('dia', ['ui.router'])
             url:'/resetTab',
             views: {
                 "loginArea": {templateUrl: 'partials/pageParts/registerLogin/resetTab.html'},
-                "liveStream": {templateUrl: 'partials/liveStream.html'}
+                "liveStream": {templateUrl: 'partials/pageParts/main/seekerAndVoter/liveStream/liveStream.html'}
             }
+        });
+
+
+
+
+        $stateProvider.state('administration', {
+            url:'/administration',
+            templateUrl: 'partials/administration.html'
         });
 
 
@@ -43,16 +55,84 @@ var dia =  angular.module('dia', ['ui.router'])
 
         $stateProvider.state('main', {
             url: '/main',
-            templateUrl: 'partials/main.html',
+            templateUrl: 'partials/main.html'
 
         });
 
-        $stateProvider.state('main.seekerAndVoter', {
-            url: '/seekerAndVoter',
-            views: {
-                "liveStream": {templateUrl: 'partials/liveStream.html'}
+
+        $stateProvider.state('main.profile', {
+            url: '/profile',
+            views:
+            {
+                "main": {templateUrl: 'partials/pageParts/profile/mainProfile.html'},
+                "profile": {templateUrl: 'partials/pageParts/profile/profileSummaryShort.html'},
+                "favourites": {templateUrl: 'partials/pageParts/favourites/favouritesArea.html'},
+                "messages": {templateUrl: 'partials/pageParts/messages/messagesArea.html'},
+                "navbar": {templateUrl: 'partials/pageParts/navbar/navbar.html'}
             }
-        })
+        });
+
+        $stateProvider.state('main.messages', {
+            url: '/messages',
+            views:
+            {
+                "main": {templateUrl: 'partials/pageParts/messages/mainMessages.html'},
+                "profile": {templateUrl: 'partials/pageParts/profile/profileSummary.html'},
+                "favourites": {templateUrl: 'partials/pageParts/favourites/favouritesArea.html'},
+                "messages": {templateUrl: 'partials/pageParts/messages/messagesArea.html'},
+                "navbar": {templateUrl: 'partials/pageParts/navbar/navbar.html'}
+            }
+        });
+
+        $stateProvider.state('main.favourites', {
+            url: '/favourites',
+            views:
+            {
+                "main": {templateUrl: 'partials/pageParts/favourites/mainFavourites.html'},
+                "profile": {templateUrl: 'partials/pageParts/profile/profileSummary.html'},
+                "favourites": {templateUrl: 'partials/pageParts/favourites/favouritesArea.html'},
+                "messages": {templateUrl: 'partials/pageParts/messages/messagesArea.html'},
+                "navbar": {templateUrl: 'partials/pageParts/navbar/navbar.html'}
+            }
+        });
+
+
+
+        $stateProvider.state('role', {
+            url: '/role',
+            abstract: true,
+            template: '<ui-view/>'
+        });
+
+        $stateProvider.state('role.seekerAndVoter', {
+            url: '/seekerAndVoter',
+            abstract: true,
+            templateUrl: 'partials/roleMains/mainSeekerAndVoter.html'
+
+        });
+
+        $stateProvider.state('role.seekerAndVoter.start', {
+            url: '/start',
+            views:
+            {
+                "liveStreamSV": {templateUrl: 'partials/pageParts/main/seekerAndVoter/liveStream/liveStream.html'},
+                "backgroundSV": {templateUrl: 'partials/pageParts/main/seekerAndVoter/background/background.html'},
+                "profile": {templateUrl: 'partials/pageParts/profile/profileSummary.html'},
+                "favourites": {templateUrl: 'partials/pageParts/favourites/favouritesArea.html'},
+                "messages": {templateUrl: 'partials/pageParts/messages/messagesArea.html'},
+                "navbar": {templateUrl: 'partials/pageParts/navbar/navbar.html'}
+            }
+        });
+
+
+
+
+
+
+
+
+
+
 
     }])
 

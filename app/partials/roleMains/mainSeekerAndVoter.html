@@ -1,0 +1,97 @@
+
+
+<body>
+
+<!-- Here ui_container -->
+<div id="container">
+
+
+    <!-- Here ui_header -->
+    <div id="header">
+        <h1>Dia </h1>
+    </div>
+
+    <!-- Here ui_search -->
+    <div id="search">
+        <input class="inputBoxSearch" type="text" ng-model="query"/>
+        <button class="buttonSearch" ng-click="search()">SEARCH</button>
+        {{ query }}
+    </div>
+
+
+
+    <!-- Here ui_sidebar -->
+    <div id="sidebar">
+        <p> BLA </p>
+
+        <div id="favoriteTopics">
+
+            <div id="droppable2" class="ui-widget-header">
+                <p>Drop here</p>
+            </div>
+
+            <div ui-view="favourites"></div>
+
+        </div>
+
+        <div id="messagesArea">
+
+            <input  type="text" ng-model="profileName"/>
+            {{ profileName }}
+
+            <div ui-view="messages"></div>
+
+
+        </div>
+    </div>
+
+
+    <!-- Here ui_left-->
+    <div id="left">
+
+
+        <!-- Here ui_profile -->
+        <div id="profile">
+            </br>
+            <p ng-repeat="properties in profiles[0]">{{ properties }}</p>
+
+
+            <div id="roleSelection">
+                <button id="buttonRoleStandard" class="buttonsRoleSelection"> Standard </button>
+                <button id="buttonRolePublisher" class="buttonsRoleSelection"> Publisher</button>
+                <button id="buttonRoleDeveloper" class="buttonsRoleSelection"> Developer </button>
+            </div>
+
+            <div ui-view="profile"></div>
+
+        </div>
+
+        <!-- Here ui_nav -->
+        <div id="nav">
+            <button ng-click="fillTopics()" >add topics</button>
+            <button ng-click="fillVoteOptions()" >add voteOptions</button>
+
+            <div ui-view="navbar"></div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- Here ui_main -->
+    <div id="main">
+
+        <!-- Here ui_livestream -->
+        <div id="liveStreamAreaAtMain">
+            <div ui-view="liveStreamSV"></div>
+        </div>
+
+        <!-- Here ui_background -->
+        <div ui-view="backgroundSV"></div>
+    </div>
+
+
+</div>
+</body>

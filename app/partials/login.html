@@ -1,30 +1,27 @@
-<link rel="stylesheet" href="login.css">
 
 
-<div>
+
+<body>
 
     <!-- Here ui_header -->
 
-    <div id="header">
-        <h1>Dia </h1>
+    <div id="headerLogin">
+        <h1>Dia</h1>
     </div>
 
     <!-- Here ui_search -->
 
-    <div id="search">
-
-    </div>
-
     <!-- Here ui_main -->
-    <div id="main">
+    <div id="mainLogin">
 
         <!-- Here ui_livestream -->
 
-        <div id="liveStream">
+        <div id="liveStreamAreaAtLogin">
 
             <button ng-click="fillTopics()" >add topics</button>
 
             <div ui-view="liveStream"></div>
+
         </div>
 
         <!-- Here ui_register_login -->
@@ -63,5 +60,5 @@
             </div>
         </div>
     </div>
-</div>
+</body>
 

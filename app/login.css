@@ -1,11 +1,7 @@
 
-body {
+#headerLogin {
     background-color: #228B22;
-}
-
-#header {
-    background-color: #228B22;
-    font-size: 200%;
+    font-size: 100%;
     width: 100%;
     height: 3%;
     color: #ecf0f1;
@@ -14,19 +10,23 @@ body {
     padding-left: 1%;
 }
 
-#main {
-    padding: 2% 0% 0% 5%;
-    width: 90%;
+#mainLogin {
+    width: 100%;
+    float:left;
+    background-color: #228B22;
 }
 
-
+#liveStreamAreaAtLogin {
+    background-color: #228B22;
+    width: 50%;
+    float: left;
+}
 
 #registerLogin {
     background-color: lightgrey;
     width: 50%;
-    height: 80%;
     color: lightgrey;
-    float: right;
+    float: left;
 }
 
 input:focus{
@@ -129,7 +129,7 @@ form input[type=password] {
 .tabs + .dark-box.top {
     position: absolute;
     right: 0;
-    top: 0px;
+    top: 0;
 }
 .show {
     display: block;
@@ -165,7 +165,7 @@ form input[type=password] {
 }
 
 ::-webkit-input-placeholder {
-    color:dark ;
+    color:darkgreen ;
 }
 :-moz-placeholder {
 
