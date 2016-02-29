@@ -46,11 +46,11 @@
         <div id="topicAreaBottom">
 
 
-            <comment-arrow ng-click="toggleCommentsSection(topic.idInLiveStream)" >
+            <comment-arrow topic-index="{{topic.idInLiveStream}}" ng-click="toggle(topic.idInLiveStream)" >
             </comment-arrow>
 
 
-            <div id="commentSection" class="commentsSection-{{topic.idInLiveStream}}" >
+            <div id="commentSection" class="commentsSection-{{topic.idInLiveStream}}" ng-hide="commentarrow.status">
 
                 <div id="commentsActual">
 
@@ -60,6 +60,12 @@
                                 ng-repeat="c in topic.comments"
                                 comment-section comment='c'>
                         </div>
+
+                        <div id="commentsAddAreaActual">
+                            <comment-arrow ng-click="toggleCommentAddSection(topic.idInLiveStream)" >
+                            </comment-arrow>
+                        </div>
+
 
                     </div>
 
@@ -74,14 +80,22 @@
                                 comment-section comment='c'>
                         </div>
 
+                        <div id="commentsAddAreaBest">
+                            <comment-arrow ng-click="toggleCommentAddSection(topic.idInLiveStream)" >
+                            </comment-arrow>
+                        </div>
+
+
                     </div>
 
                 </div>
 
-
-
+                <div class="commentingArea-{{topic.idInLiveStream}}">
+                    <input type="text" placeholder="write new comment here" ng-model="commentAdded" style="width: 100%; height: 3%">
+                </div>
 
             </div>
+
         </div>
 
 

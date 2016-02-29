@@ -81,6 +81,10 @@ dia.controller('simpleController', function ($scope) {
     $scope.profileName = "";
     $scope.profileUni = "";
 
+    $scope.topicindex = 0;
+    $scope.commentarrow = {};
+    $scope.commentarrow.status = true;
+
 
     // Model Constructors
 
@@ -113,6 +117,11 @@ dia.controller('simpleController', function ($scope) {
 
     function Background(text) {
         this.text = text;
+    }
+
+    function Commentarrow(id) {
+        this.id = id;
+        this.status = true;
     }
 
 
@@ -176,5 +185,11 @@ dia.controller('simpleController', function ($scope) {
         $('.commentsSection-' + id).toggle();
     };
 
+    $scope.toggleCommentAddSection = function (id) {
+        $('.commentingArea-' +id).toggle();
+    };
 
+    $scope.toggle = function (id) {
+        $scope.commentarrow.status = !$scope.commentarrow.status;
+    };
 });

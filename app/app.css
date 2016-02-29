@@ -19,7 +19,7 @@ body
     background-color: white;
     width: 1280px;
     height: 1024px;
-    margin-right: auto;
+    margin:auto;
 }
 
 #header {

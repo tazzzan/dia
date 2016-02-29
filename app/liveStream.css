@@ -34,6 +34,8 @@ sections of:
 
 #topicAreaBottom {
     width: 100%;
+    height: auto;
+    background: silver;
     float: left;
 }
 
@@ -149,11 +151,6 @@ sections of:
 
 */
 
-#commentSection {
-    height: 11%;
-    background: silver;
-}
-
 #commentsActual {
     clear: left;
     width: 50%;
@@ -163,6 +160,11 @@ sections of:
 #commentsBest {
     float: left;
     width: 50%;
+}
+
+.commentsAddArea {
+    width: 100%;
+    float: left;
 }
 
 /*

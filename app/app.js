@@ -212,7 +212,11 @@ dia.directive('commentArrow', function () {
     return {
         restrict: 'E',
         transclude: true,
-        template: '<div class="commentArrow">  </div>'
+        scope: {topicIndex: '='},
+        template: '<div class="commentArrow">  </div>',
+        link: function ($scope, scope) {
+            $scope.commentarrow = new Commentarrow(scope.topicIndex);
+        }
     }
 });
 
