@@ -85,6 +85,8 @@ dia.controller('simpleController', function ($scope) {
     $scope.commentarrow = {};
     $scope.commentarrow.status = true;
 
+    $scope.commentAdded = "";
+
 
     // Model Constructors
 
@@ -93,13 +95,13 @@ dia.controller('simpleController', function ($scope) {
         this.uni = uni;
     }
 
-    function Topic(name, owner, vts, voteOptions, comments) {
+    function Topic(name, owner, vts, voteOptions) {
         this.name = name;
         this.owner = owner;
         this.vts = vts;
         this.voteOptions = voteOptions;
         this.pic = src = "img/merkel.jpg";
-        this.comments = comments;
+        this.comments = [];
         this.idInLiveStream = 0;
         this.backgrounds = [];
     }
@@ -124,6 +126,10 @@ dia.controller('simpleController', function ($scope) {
         this.status = true;
     }
 
+    function Comment(text, topic) {
+        this.text = text;
+        this.topic = topic;
+    }
 
     // Functions
 
@@ -138,6 +144,8 @@ dia.controller('simpleController', function ($scope) {
             $scope.message7 = new Message("Exercise?", {name: 'Thomas', uni: 'Schma'})
         )
     };
+
+
 
     $scope.fillVoteOptions = function () {
 
@@ -161,14 +169,31 @@ dia.controller('simpleController', function ($scope) {
         )
     };
 
+    $scope.fillComments = function (){
+        for (var i=0; i<$scope.topics.length; i++) {
+            $scope.topics[i].comments.push(
+                $scope.comment1 = new Comment("Nice, I like it", $scope.topic),
+                $scope.comment2 = new Comment("Ahoi", $scope.topic),
+                $scope.comment3 = new Comment("That shit sucks dick", $scope.topic),
+                $scope.comment4 = new Comment("Awesome", $scope.topic)
+            )
+        }
+    };
+
+    $scope.addComment = function (text, topic) {
+        $scope.topic = topic;
+        $scope.topic.comments.push(
+            $scope.comment = new Comment(text)
+        )
+    };
 
     $scope.fillTopics = function () {
 
         $scope.topics.push(
-            $scope.topic2 = new Topic("Better broadband", "Uta", ['20% pro', '80% contra'], ['Yes', 'No', 'Fuck off'], ['Shit', 'Thumb up', 'Nice']),
-            $scope.topic3 = new Topic("No tutions fees anymore!", "Pete", ['10% pro', '90% contra'], ['Yes', 'No', 'Fuck off'], ['Shit', 'Thumb up', 'Nice']),
-            $scope.topic4 = new Topic("Coffee for free in Glasgow!", "Ilja", ['60% pro', '40% contra'], ['Yes', 'No', 'Fuck off'], ['Finally', 'Awesome', 'haha']),
-            $scope.topic5 = new Topic("No trees in Glasgow!", "Ilja", ['10% pro', '90% contra'], ['Yes', 'No', 'Fuck off'], ['Hurray', 'Awesome', 'BAD'])
+            $scope.topic2 = new Topic("Better broadband", "Uta", ['20% pro', '80% contra'], ['Yes', 'No', 'Fuck off']),
+            $scope.topic3 = new Topic("No tutions fees anymore!", "Pete", ['10% pro', '90% contra'], ['Yes', 'No', 'Fuck off']),
+            $scope.topic4 = new Topic("Coffee for free in Glasgow!", "Ilja", ['60% pro', '40% contra'], ['Yes', 'No', 'Fuck off']),
+            $scope.topic5 = new Topic("No trees in Glasgow!", "Ilja", ['10% pro', '90% contra'], ['Yes', 'No', 'Fuck off'])
         );
     };
 

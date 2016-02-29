@@ -150,6 +150,11 @@ sections of:
 äcomment
 
 */
+#commentsSection {
+    float: left;
+    width: 100%;
+    height: auto;
+}
 
 #commentsActual {
     clear: left;
@@ -162,11 +167,32 @@ sections of:
     width: 50%;
 }
 
-.commentsAddArea {
+.addCommentingArea {
+    clear: left;
     width: 100%;
     float: left;
 }
 
+#commentingArea  {
+    float: left;
+    width: 100%;
+    height: 5%;
+}
+
+#inputComment {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    float: left;
+    width: 80%;
+    height: 80%;
+}
+
+#buttonAddComment {
+    float: right;
+    font-size: 80%;
+    width: 15%;
+    height: 80%;
+}
 /*
 
 elements of:
@@ -176,7 +202,7 @@ elements of:
 
 .draggableTopicsComment {
     width: 130px;
-    height: 20px;
+    height: auto;
     margin-left: 20px;
     background: black;
     color: white;
@@ -185,6 +211,7 @@ elements of:
 }
 
 .commentArrow {
+    float: left;
     width: 100%;
     height: 3%;
     background-color: grey;
