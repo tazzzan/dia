@@ -18,8 +18,10 @@
 
 #liveStreamAreaAtLogin {
     background-color: #228B22;
-    width: 50%;
+    width: 30%;
     float: left;
+    padding-left:10%;
+    padding-right: 10%;
 }
 
 #registerLogin {

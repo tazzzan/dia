@@ -6,10 +6,11 @@ elements of:
 
 */
 
-#topic {
-    height:90px;
-    clear: left;
+.topic {
+    background-color: green;
+    height:auto;
     width: 100%;
+    padding-bottom: 1%;
     float: left;
 }
 
@@ -21,20 +22,19 @@ sections of:
 */
 
 #topicAreaTitle {
-    clear:left;
     width: 100%;
-    height: 20px;
     background-color:rgba(255, 255, 255, 0.8);
-
+    float: left;
 }
 
 #topicAreaBody {
-    height: 70px;
+    height:17%;
     width: 100%;
 }
 
 #topicAreaBottom {
     width: 100%;
+    float: left;
 }
 
 
@@ -46,7 +46,7 @@ sections of:
 */
 
 #topicAreaLeft {
-    height: 70px;
+    height:100%;
     width: 50%;
     font-size: 8px;
     color: white;
@@ -54,7 +54,7 @@ sections of:
 }
 
 #topicAreaRight {
-    height: 70px;
+    height: 100%;
     width: 50%;
     float: left;
     color: white;
@@ -71,9 +71,11 @@ elements of:
     background-color:rgba(0, 0, 0, 0.4);
 
 }
+
 #topicTitle {
 
-    font-size: 16px;
+    height: 2%;
+    font-size: 20%;
     color: white;
 }
 
@@ -83,47 +85,49 @@ elements of:
     border-color: crimson;
 }
 #topicOwnerBox {
-    height: 5px;
+    height: 15%;
     width: 50%;
 }
 
 #topicOwner {
-    width: 30px;
-    font-size: 10px;
+    width: auto;
+    font-size:200%;
     color: white;
     margin-left: 5px;
 }
 
 #topicDescriptionBox {
-    width: 50%;
+    height: 70%;
+    width: 90%;
 }
 #topicDescription {
     color: white;
+    font-size: 150%;
     margin-left: 5px;
 }
 
 #topicVoteResultsBox {
-    width: 50%;
-    height: 30px;
+    margin-top: 10%;
+    height: 40%;
+    width: 80%;
 }
 #topicVoteResults {
-    width: 50%;
+
     font-size: 12px;
     margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-#topicVoteResultsBox {
-    width: 50%;
-    height: 20px;
-}
 #draggableVoteOption {
 
     float: left;
     width: 50px;
     height:20px;
-    background : dimgrey;
+    background : darkslategrey;
     color: white;
     font-size: 13px;
+    margin-top: 5%;
     margin-left: 5px;
     margin-right: 10px;
     text-align: center;
@@ -131,9 +135,12 @@ elements of:
 
 .hrTopic {
     border: 0;
-    height: 1px;
+    height: 2%;
     background: lightgrey;
+    float: left;
+    padding: 2%;
 }
+
 
 /*
 
@@ -142,8 +149,8 @@ sections of:
 
 */
 
-#commentsSection {
-    width: 100%;
+#commentSection {
+    height: 14%;
     background: silver;
 }
 
@@ -176,6 +183,6 @@ elements of:
 
 .commentArrow {
     width: 100%;
-    height: 10px;
+    height: 3%;
     background-color: grey;
 }

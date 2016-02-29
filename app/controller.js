@@ -15,9 +15,12 @@ dia.controller('simpleController', function ($scope) {
     $scope.firstLevelTopic = {};
     $scope.secondLevelTopic = {};
     $scope.thirdLevelTopic = {};
+    $scope.topics = [];
+
 
     $scope.background = {};
     $scope.backgroundSource = {};
+    $scope.backgrounds = [];
 
     $scope.vote = {};
     $scope.userVote = {};
@@ -25,6 +28,7 @@ dia.controller('simpleController', function ($scope) {
     $scope.topicVote = {};
     $scope.backgroundVote = {};
     $scope.voteOption = {};
+    $scope.voteOptions = [];
 
     $scope.comment = {};
     $scope.topicComment = {};
@@ -42,6 +46,11 @@ dia.controller('simpleController', function ($scope) {
 
 
 
+
+    $scope.indextopic=0;
+    $scope.topictopic={};
+    $scope.selectedTopic = new Topic();
+
     $scope.selectedName = $scope.profile[0];
     $scope.articleTopic = "";
 
@@ -52,7 +61,7 @@ dia.controller('simpleController', function ($scope) {
     $scope.createProfile = function (name, uni) {
         $scope.profiles.push(
             $scope.newProfile = new Profile(name, uni)
-            )
+            );
 
         console.log("blabla: " + $scope.profiles[0].name + $scope.profiles[0].uni + "");
     };
@@ -60,7 +69,7 @@ dia.controller('simpleController', function ($scope) {
     $scope.showExistingProfiles = function () {
         console.log($scope.profiles[0].name + $scope.profiles[0].uni);
         return $scope.profiles;
-    }
+    };
 
 
 
@@ -76,10 +85,25 @@ dia.controller('simpleController', function ($scope) {
         this.voteOptions = voteOptions;
         this.pic = src="img/merkel.jpg";
         this.comments = comments;
-
+        this.idInLiveStream = 0;
+        this.backgrounds = [];
     }
 
-    $scope.topics = [];
+
+    $scope.clickForComment = function(boolean) {
+        $scope.topic.clickForComment = boolean;
+    }
+
+    $scope.topic.setIdInLiveStream = function(id) {
+        $scope.topic.idInLiveStream = id;
+    }
+
+    // return : IdInLiveStream its ID in nummeric -->
+
+    function getIdInLiveStream() {
+        return $scope.topic.idInLiveStream;
+    }
+
 
 
 
@@ -87,13 +111,29 @@ dia.controller('simpleController', function ($scope) {
         this.voteOption = name;
     }
 
-    $scope.voteOptions = [];
 
     $scope.fillVoteOptions = function () {
 
         $scope.voteOptions.push(
             $scope.option1 = new VoteOption("Yes"),
             $scope.option2 = new VoteOption("No")
+        )
+    };
+
+    function Background(text) {
+        this.text = text;
+    }
+
+    $scope.fillBackgrounds = function () {
+
+        $scope.backgrounds.push(
+            $scope.background1 = new Background("Google Source"),
+            $scope.background2 = new Background("Google Source"),
+            $scope.background3 = new Background("Bing Source"),
+            $scope.background4 = new VoteOption("Wikipedia Source"),
+            $scope.background5 = new VoteOption("Google Source"),
+            $scope.background6 = new VoteOption("BBC Source"),
+            $scope.background7 = new VoteOption("Google Source")
         )
     };
 
@@ -123,8 +163,8 @@ dia.controller('simpleController', function ($scope) {
 
 
     $scope.toggleCommentsSection = function(id) {
-        $('#commentsSection-' + id).toggle();
-    }
+        $('.commentsSection-' + id).toggle();
+    };
 
 
 });

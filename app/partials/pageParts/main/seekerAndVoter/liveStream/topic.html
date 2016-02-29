@@ -1,10 +1,7 @@
-
-
-    <div ng-repeat="topic in topics | filter:query">
+<div class="topic">
 
         <div  id="topicAreaTitle">
             <p> {{ topic.name }} </p>
-
         </div>
 
 
@@ -27,8 +24,8 @@
 
             <div id="topicAreaRight">
 
-                <div id="topicVoteResultsBox">
-                    <ul id="topicVoteResults" class="topicsElements">
+                <div id="topicVoteResultsBox" class="topicsElements">
+                    <ul id="topicVoteResults" >
                         <li ng-repeat="a in topic.vts"> {{ a }}</li>
                     </ul>
                 </div>
@@ -40,10 +37,10 @@
                     <div class="voteOption">
 
 
-                        <div
-                                ng-repeat="b in topic.voteOptions"
-                                voteoption-section voteoption='b'>
-                        </div>
+                        <voteoption-section
+                                voteoption='b'
+                                ng-repeat="b in topic.voteOptions">
+                        </voteoption-section>
 
                     </div>
                 </div>
@@ -54,8 +51,44 @@
 
         <div id="topicAreaBottom">
 
-            <div ng-include="'partials/pageParts/liveStream/comment.html'"></div>
+
+            <comment-arrow ng-click="toggleCommentsSection(topic.idInLiveStream)">
+            </comment-arrow>
+
+
+            <div id="commentSection" class="commentsSection-{{topic.idInLiveStream}}" >
+
+                <div id="commentsActual">
+
+                    <div class="comment">
+
+                        <div
+                                ng-repeat="c in topic.comments"
+                                comment-section comment='c'>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="commentsBest">
+
+                    <div class="comment">
+
+                        <div
+                                ng-repeat="c in topic.comments"
+                                comment-section comment='c'>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
         </div>
 
-    </div>
 
+</div>

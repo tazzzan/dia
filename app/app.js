@@ -125,31 +125,27 @@ var dia =  angular.module('dia', ['ui.router'])
         });
 
 
-
-
-
-
-
-
-
-
-
-    }])
-
+    }]);
 
 
 
 dia.directive('topicSection', function () {
-    return {
-        restrict: 'A',
-        transclude: true,
-        scope: {topicbody: '='},
-        templateURL:'view1.html',
-        link: function (scope, element, attrs) {
-            $(element).draggable({appendTo: 'body', revert: true});
-        }
-    };
+   return {
+       restrict: 'A',
+       scope: {
+                indextopic: '@',
+                topictopic: '='
+                },
+       link: function(scope, $scope) {
+
+            $scope.topic = scope.topictopic;
+            $scope.topic.idInLiveStream = scope.indextopic;
+
+            }
+       }
 });
+
+
 
 dia.directive('commentSection', function () {
     return {
@@ -166,25 +162,36 @@ dia.directive('commentSection', function () {
 
 dia.directive('voteoptionSection', function () {
     return {
-        restrict: 'A',
+        restrict: 'E',
         transclude: true,
         scope: {voteoption: '='},
-        template: '<div id="draggableVoteOption" drag-drop target-object="droppable2">{{ voteoption }}</div>',
+        template: '<drag-drop target-object="droppable2" id="draggableVoteOption">{{ voteoption }}</drag-drop>'
+    };
 
+});
+
+dia.directive('backgroundSection', function () {
+    return {
+        restrict: 'A',
+        transclude: true,
+        scope: {background: '='},
+        template: '<p class="draggableBackground" >{{ background.text }}</p>',
+        link: function (scope, element, attrs) {
+            $(element).draggable({appendTo: 'body', revert: true});
+        }
 
     };
 });
 
 dia.directive('dragDrop', function () {
     return {
-        restrict: 'A',
+        restrict: 'E',
         transclude: true,
         scope: {targetObject:'@'},
         link: function(scope, element) {
             $( element ).draggable({appendTo: 'body', revert: true});
             var targetId = "#" + scope.targetObject;
             $(targetId).droppable({
-
                 accept: $( element ),
                 activeClass: "ui-state-default",
                 drop: function (event, ui) {
@@ -212,19 +219,6 @@ dia.directive('makeDraggable', function () {
     }
 });
 
-dia.directive('boxBackground', function () {
-    return {
-        restrict: 'AE',
-        transclude: true,
-        template : '<div class="draggableTopicsComment">' +
-            '           <img src="img/merkel.jpg" style="width:80px;height:88px;float:right" id="topicImage"/>' +
-            '           <p> EDDDDD</p>' +
-                    '</div>',
-        link: function (scope, element, attrs) {
-            $(element).draggable({appendTo: 'body', revert: true});
-        }
-    }
-});
 
 dia.directive('commentArrow', function () {
     return {
