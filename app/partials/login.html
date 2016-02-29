@@ -1,12 +1,17 @@
-
-
-
 <body>
+
+<!-- Here ui_container -->
+<div id="container">
 
     <!-- Here ui_header -->
 
     <div id="headerLogin">
-        <h1>Dia</h1>
+
+        <a
+                class="headerTopic"
+                ui-sref="role.seekerAndVoter.start">Dia
+        </a>
+
     </div>
 
     <!-- Here ui_search -->
@@ -18,15 +23,16 @@
 
         <div id="liveStreamAreaAtLogin">
 
-            <button ng-click="fillTopics()" >add topics</button>
+            <button ng-click="fillTopics()">add topics</button>
 
             <div ui-view="liveStream"></div>
+
 
         </div>
 
         <!-- Here ui_register_login -->
 
-        <div id="registerLogin" >
+        <div id="registerLogin">
 
             <div class="container">
                 <div class="flat-form">
@@ -60,5 +66,6 @@
             </div>
         </div>
     </div>
+</div>
 </body>
 

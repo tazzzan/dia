@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<input type="text" ng-model="profileName" placeholder="filter by person" style="width: 100%; height: 2%"/>
 
-</body>
-</html>
+<div id="messageContainer">
+
+
+    <div id="messageBox" ng-repeat="message in messages | filter:profileName">
+
+        <a id="receiverInMessageBox"
+           ui-sref="main.messages">
+            {{message.receiver.name}}
+        </a>
+
+        <a id="textOfMessage">
+            {{message.text}}
+        </a>
+
+
+    </div>
+
+
+</div>
+
+

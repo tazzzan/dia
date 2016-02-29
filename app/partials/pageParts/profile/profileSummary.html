@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div id="profileSummary">
 
-</body>
-</html>
+    <p ng-repeat="properties in profiles[0]">{{ properties }}</p>
+
+</div>
+
+<div id="roleSelection">
+
+    <button id="buttonRoleStandard" class="buttonsRoleSelection"
+            ui-sref="role.seekerAndVoter.start"> Vote
+    </button>
+    <button id="buttonRolePublisher" class="buttonsRoleSelection"> Publish</button>
+    <button id="buttonRoleDeveloper" class="buttonsRoleSelection"> Develop</button>
+
+</div>
+
+

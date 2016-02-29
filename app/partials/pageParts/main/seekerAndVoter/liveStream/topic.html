@@ -34,13 +34,7 @@
 
                 <div id="topicVoteOptionsBox">
 
-                    <div class="voteOption">
-
-
-                        <voteoption-section
-                                voteoption='b'
-                                ng-repeat="b in topic.voteOptions">
-                        </voteoption-section>
+                    <div class="voteOption" voteoption-section voteoption='b' ng-repeat="b in topic.voteOptions">
 
                     </div>
                 </div>
@@ -52,7 +46,7 @@
         <div id="topicAreaBottom">
 
 
-            <comment-arrow ng-click="toggleCommentsSection(topic.idInLiveStream)">
+            <comment-arrow ng-click="toggleCommentsSection(topic.idInLiveStream)" >
             </comment-arrow>
 
 
