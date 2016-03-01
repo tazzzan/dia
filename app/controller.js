@@ -49,6 +49,8 @@ dia.controller('simpleController', function ($scope) {
     $scope.backgroundVote = {};
     $scope.votes = [];
 
+    $scope.finalVotingResult = {};
+
     $scope.voteOption = {};
     $scope.voteOptions = [];
 
@@ -95,20 +97,22 @@ dia.controller('simpleController', function ($scope) {
         this.uni = uni;
     }
 
-    function Topic(name, owner, vts, voteOptions) {
+    function Topic(name, owner, vts) {
         this.name = name;
         this.owner = owner;
         this.vts = vts;
-        this.voteOptions = voteOptions;
         this.pic = src = "img/merkel.jpg";
-        this.comments = [];
         this.idInLiveStream = 0;
+        this.comments = [];
         this.backgrounds = [];
+        this.votes = [];
+        this.finalVotingResults = [];
+        this.voteOptions = [];
     }
 
 
-    function VoteOption(name) {
-        this.voteOption = name;
+    function VoteOption(text) {
+        this.text = text;
     }
 
     function Message(text, receiver) {
@@ -131,8 +135,23 @@ dia.controller('simpleController', function ($scope) {
         this.topic = topic;
     }
 
+    function Vote(voteoption) {
+        this.voteOption = voteoption;
+    }
+
+    function FinalVotingResult(voteoptionname) {
+        this.voteOptionName = voteoptionname;
+        this.counter = 0;
+    }
+
     // Functions
 
+    $scope.addFinalVotingResultToTopic = function (voteoptionname, topic) {
+        $scope.topic = topic;
+        $scope.topic.finalVotingResults.push(
+            $scope.finalVotingResult = new FinalVotingResult(voteoptionname)
+        )
+    }
     $scope.fillMessages = function () {
         $scope.messages.push(
             $scope.message1 = new Message("Hey, whazzup?", {name: 'Danny', uni: 'Fuwa'}),
@@ -148,25 +167,61 @@ dia.controller('simpleController', function ($scope) {
 
 
     $scope.fillVoteOptions = function () {
+        for (var i = 0; i < $scope.topics.length; i++) {
+            $scope.topics[i].voteOptions.push(
+                $scope.option1 = new VoteOption("Yes"),
+                $scope.option2 = new VoteOption("No"),
+                $scope.option3 = new VoteOption("Fuck Off")
+            )
 
-        $scope.voteOptions.push(
-            $scope.option1 = new VoteOption("Yes"),
-            $scope.option2 = new VoteOption("No")
-        )
+            $scope.addFinalVotingResultToTopic($scope.option1.text, $scope.topics[i]);
+            $scope.addFinalVotingResultToTopic($scope.option2.text, $scope.topics[i]);
+            $scope.addFinalVotingResultToTopic($scope.option3.text, $scope.topics[i]);
+        }
     };
 
 
     $scope.fillBackgrounds = function () {
 
-        $scope.backgrounds.push(
-            $scope.background1 = new Background("Google Source"),
-            $scope.background2 = new Background("Google Source"),
-            $scope.background3 = new Background("Bing Source"),
-            $scope.background4 = new Background("Wikipedia Source"),
-            $scope.background5 = new Background("Google Source"),
-            $scope.background6 = new Background("BBC Source"),
-            $scope.background7 = new Background("Google Source")
-        )
+
+
+        for (var i=0; i<$scope.topics.length; i++) {
+
+            if(i==0){
+
+                $scope.topics[i].backgrounds.push(
+                    $scope.background1 = new Background("Google Source"),
+                    $scope.background2 = new Background("Google Source"),
+                    $scope.background3 = new Background("Bing Source")
+                )
+            }
+            if(i==1){
+                $scope.topics[i].backgrounds.push(
+                    $scope.background3 = new Background("Bing Source"),
+                    $scope.background4 = new Background("Wikipedia Source"),
+                    $scope.background5 = new Background("Google Source"),
+                    $scope.background6 = new Background("BBC Source")
+                )
+            }
+            if(i==2) {
+                $scope.topics[i].backgrounds.push(
+                    $scope.background6 = new Background("BBC Source"),
+                    $scope.background7 = new Background("Google Source"),
+                    $scope.background3 = new Background("Bing Source"),
+                    $scope.background4 = new Background("Wikipedia Source")
+               )
+            }
+
+            if(i==3) {
+                $scope.topics[i].backgrounds.push(
+                    $scope.background1 = new Background("Google Source"),
+                    $scope.background2 = new Background("Google Source"),
+                    $scope.background3 = new Background("Bing Source"),
+                    $scope.background4 = new Background("Wikipedia Source")
+                )
+            }
+
+        }
     };
 
     $scope.fillComments = function (){
@@ -190,11 +245,12 @@ dia.controller('simpleController', function ($scope) {
     $scope.fillTopics = function () {
 
         $scope.topics.push(
-            $scope.topic2 = new Topic("Better broadband", "Uta", ['20% pro', '80% contra'], ['Yes', 'No', 'Fuck off']),
-            $scope.topic3 = new Topic("No tutions fees anymore!", "Pete", ['10% pro', '90% contra'], ['Yes', 'No', 'Fuck off']),
-            $scope.topic4 = new Topic("Coffee for free in Glasgow!", "Ilja", ['60% pro', '40% contra'], ['Yes', 'No', 'Fuck off']),
-            $scope.topic5 = new Topic("No trees in Glasgow!", "Ilja", ['10% pro', '90% contra'], ['Yes', 'No', 'Fuck off'])
+            $scope.topic2 = new Topic("Better broadband", "Uta", ['20% pro', '80% contra']),
+            $scope.topic3 = new Topic("No tutions fees anymore!", "Pete", ['10% pro', '90% contra']),
+            $scope.topic4 = new Topic("Coffee for free in Glasgow!", "Ilja", ['60% pro', '40% contra']),
+            $scope.topic5 = new Topic("No trees in Glasgow!", "Ilja", ['10% pro', '90% contra'])
         );
+        $scope.selectTopic($scope.topic2);
     };
 
 
@@ -216,5 +272,75 @@ dia.controller('simpleController', function ($scope) {
 
     $scope.toggle = function (id) {
         $scope.commentarrow.status = !$scope.commentarrow.status;
+    };
+
+    $scope.selectTopic = function (topic) {
+        $scope.selectedTopic = topic;
+    };
+
+    $scope.voteOnTopic = function (voteoption, topic) {
+        $scope.topic = topic;
+        $scope.topic.votes.push(
+            $scope.vote = new Vote(voteoption)
+        )
+        $scope.returnVotingResult($scope.topic);
+    };
+
+    $scope.returnVotingResult = function (topic) {
+
+        $scope.topic = topic;
+
+        // first saving 'voteOption.text' of all votes
+        // as STRING format in an array
+
+        var votingResults = [];
+
+        for (var i=0; i<topic.votes.length; i++) {
+            votingResults.push(
+                topic.votes[i].voteOption.text
+            )
+        }
+
+        // finally creating a result object
+        // result = {voteOption1: x; voteOption2: y}
+
+
+        for(var d=0; d<$scope.topic.finalVotingResults.length; d++) {
+            for (var ii=0; ii<votingResults.length; ii++) {
+
+                var voteOptionName = $scope.topic.finalVotingResults[d].voteOptionName;
+
+
+
+                if(votingResults[ii]==voteOptionName){
+                    $scope.topic.finalVotingResults[d].counter++;
+                }
+
+            }
+        }
+        return $scope.topic.finalVotingResults;
+
+    }
+
+    $scope.giveAlert = function () {
+        alert("Fuck!");
+    };
+    $scope.checkArrayForAttributes = function (array, attribute) {
+
+        if(array.length!=0){
+            for(var m=0; m<array.length; m++) {
+
+                if(array[m].hasOwnProperty(attribute)){
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+        else{
+            return false;
+        }
+
     };
 });

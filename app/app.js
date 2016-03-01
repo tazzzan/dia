@@ -149,7 +149,7 @@ dia.directive('voteoptionSection', function () {
         restrict: 'A',
         transclude: true,
         scope: {voteoption: '='},
-        template: '<p class="draggableVoteOption" >{{ voteoption }}</p>',
+        template: '<p class="draggableVoteOption">{{ voteoption.text }}</p>',
         link: function (scope, element, attrs) {
             $(element).draggable({appendTo: 'body', revert: true});
         }

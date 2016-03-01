@@ -1,6 +1,6 @@
 <div class="topic">
 
-        <div  id="topicAreaTitle">
+        <div  id="topicAreaTitle" ng-click="selectTopic(topic)">
             <p> {{ topic.name }} </p>
         </div>
 
@@ -26,7 +26,7 @@
 
                 <div id="topicVoteResultsBox" class="topicsElements">
                     <ul id="topicVoteResults" >
-                        <li ng-repeat="a in topic.vts"> {{ a }}</li>
+                        <li ng-repeat="a in topic.finalVotingResults"> {{ a.voteOptionName +" has " + a.counter }}</li>
                     </ul>
                 </div>
 
@@ -34,7 +34,7 @@
 
                 <div id="topicVoteOptionsBox">
 
-                    <div class="voteOption" voteoption-section voteoption='b' ng-repeat="b in topic.voteOptions">
+                    <div class="voteOption" voteoption-section voteoption='b' ng-repeat="b in topic.voteOptions" ng-model="b" ng-click="voteOnTopic(b, topic)">
 
                     </div>
                 </div>
