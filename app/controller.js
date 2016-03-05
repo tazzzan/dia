@@ -87,7 +87,7 @@ dia.controller('simpleController', function ($scope) {
     $scope.indextopic = 0;
     $scope.topictopic = {};
     $scope.selectedTopic = new Topic();
-
+    $scope.textTopicDescription =  "Hier kommt dann die Beschreibung rein. Die Schriftgroesse sollte anpassbar sein.Ich hoffe, dass die Texte hier nicht allzu lang werden.";
     $scope.selectedName = $scope.profile[0];
     $scope.articleTopic = "";
 
@@ -119,6 +119,7 @@ dia.controller('simpleController', function ($scope) {
         this.vts = vts;
         this.pic = src = "img/merkel.jpg";
         this.idInLiveStream = 0;
+        this.description = $scope.textTopicDescription;
         this.comments = [];
         this.backgrounds = [];
         this.votes = [];

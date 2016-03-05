@@ -1,9 +1,6 @@
-
-
-    <div ng-repeat="topic in topics | filter:query">
-
+<div class="topic">
         <div  id="topicAreaTitle">
-            <p> {{ topic.name }} </p>
+            <edit-in-place value="topic.name"></edit-in-place>
 
         </div>
 
@@ -13,14 +10,13 @@
             <div id="topicAreaLeft">
 
                 <div id="topicOwnerBox">
-                    <div id="topicOwner" class="topicsElements"><p> {{topic.owner}}</p> </div>
+                    <edit-in-place id="topicOwner" class="topicsElements" value="topic.owner"></edit-in-place>
                 </div>
 
                 <div id="topicDescriptionBox">
-                    <p id="topicDescription" class="topicsElements">
-                        Hier kommt dann die Beschreibung rein. Die Schriftgroesse sollte anpassbar sein.
-                        Ich hoffe, dass die Texte hier nicht allzu lang werden.
-                    </p>
+                    <edit-in-place id="topicDescription" class="topicsElements" value="topic.description">
+
+                    </edit-in-place>
                 </div>
 
             </div>
@@ -52,10 +48,58 @@
 
         </div>
 
-        <div id="topicAreaBottom">
+    <div id="topicAreaBottom">
 
-            <div ng-include="'partials/pageParts/liveStream/comment.html'"></div>
+
+        <comment-arrow topic-index='topic.idInLiveStream' ng-click="toggle(topic.idInLiveStream)" >
+        </comment-arrow>
+
+
+        <div id="commentsSection" class="commentsSection-{{topic.idInLiveStream}}" ng-hide="commentarrow.status">
+
+            <div id="commentsActual">
+
+                <div class="comment">
+
+                    <div
+                            ng-repeat="c in topic.comments"
+                            comment-section comment='c.text'>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div id="commentsBest">
+
+                <div class="comment">
+
+                    <div
+                            ng-repeat="c in topic.comments"
+                            comment-section comment='c.text'>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+            <div id="addCommentingArea">
+                <comment-arrow ng-click="toggleCommentAddSection(topic.idInLiveStream)" >
+                </comment-arrow>
+            </div>
+
+            <div id="commentingArea" class="commentingArea-{{topic.idInLiveStream}}">
+                <input id="inputComment" type="text" placeholder="write new comment here" ng-model="commentAdded" >
+                <button id="buttonAddComment" class="buttonsRoleSelection" ng-click="addComment(commentAdded, topic)">
+                    Comment
+                </button>
+            </div>
+
         </div>
 
-    </div>
 
+    </div>
+</div>

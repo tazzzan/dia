@@ -3,6 +3,17 @@ elements of:
 #livestream
 */
 
+#liveStreamFilters {
+
+    float: left;
+    width: 100%;
+    height: 5%;
+    background-color: #228B22;
+    color: white;
+    text-align: center;
+
+}
+
 .topic {
     background-color: #228B22;
     height: auto;
@@ -119,7 +130,7 @@ elements of:
     float: left;
     width: 50px;
     height: 20px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 0, 0, 0.4);
     color: white;
     font-size: 13px;
     margin-top: 5%;
@@ -192,7 +203,7 @@ elements of:
     width: 130px;
     height: auto;
     margin-left: 20px;
-    background: black;
+    background-color: rgba(0, 0, 0, 0.4);
     color: white;
     font-size: 13px;
     text-align: left;

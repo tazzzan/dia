@@ -81,6 +81,15 @@ body
     padding-left: 1%;
     float: left;
 }
+
+#liveStreamAreaAtMainPublisher {
+    clear: left;
+    width: 55%;
+    color: black;
+    padding-left: 1%;
+    float: left;
+}
+
 #background {
     width: 40%;
     color: black;
@@ -157,7 +166,7 @@ elements of:
     font-size: 11px;
     background-color: #FFFFFF;
     height: 70%;
-    width: 800px;
+    width: 64%;
     border-radius: 4px;
 
     margin: 7px;
@@ -179,7 +188,7 @@ elements of:
 
 .buttonSearch {
     position: absolute;
-    left: 73%;
+    left: 74%;
     top: 7px;
     width: 74px;
     height:70% ;
@@ -224,7 +233,7 @@ elements of:
     width: 31%;
     height: 20%;
     margin: 1%;
-    font-size: 80%;
+    font-size: 60%;
     border: none;
     display: block;
     background: #228B22;
@@ -342,4 +351,23 @@ elements of:
     height: 4%;
     margin-left: 2%;
     margin-top: 2%
+}
+
+
+
+.edit-in-place span {
+    cursor: pointer;
+}
+
+.edit-in-place input {
+    display: none;
+}
+
+.edit-in-place.active span {
+    display: none;
+}
+
+.edit-in-place.active input {
+    display: inline-block;
+    height: 100%;
 }
