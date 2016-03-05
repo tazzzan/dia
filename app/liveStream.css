@@ -1,8 +1,6 @@
 /*
-
 elements of:
 #livestream
-
 */
 
 .topic {
@@ -14,10 +12,8 @@ elements of:
 }
 
 /*
-
 sections of:
 #topic
-
 */
 
 #topicAreaTitle {
@@ -40,10 +36,8 @@ sections of:
 }
 
 /*
-
 sections of:
 #topicAreaBody
-
 */
 
 #topicAreaLeft {
@@ -63,10 +57,8 @@ sections of:
 }
 
 /*
-
 elements of:
 #topic
-
 */
 .topicsElements {
     background-color: rgba(0, 0, 0, 0.4);
@@ -145,10 +137,8 @@ elements of:
 }
 
 /*
-
 sections of:
 äcomment
-
 */
 #commentsSection {
     float: left;
@@ -194,10 +184,8 @@ sections of:
     height: 80%;
 }
 /*
-
 elements of:
 #comment
-
 */
 
 .draggableTopicsComment {

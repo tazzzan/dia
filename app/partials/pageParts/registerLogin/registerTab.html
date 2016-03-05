@@ -7,13 +7,14 @@
     <form>
         <ul>
             <li>
-                <input type="text" placeholder="Username" ng-model="profileName"/>
+                <input type="text" placeholder="Username" ng-model="typedName"/>
             </li>
             <li>
-                <input type="password" placeholder="Uni" ng-model="profileUni" />
+                <input type="password" placeholder="Uni" ng-model="typedUni" />
             </li>
             <li>
-                <input type="submit" value="Sign Up" class="button" ng-click="createProfile(profileName, profileUni)"/>
+                <input type="submit" value="Sign Up" class="button" ng-click="registerProfile(typedName, typedUni)"
+                       ui-sref="main"/>
             </li>
         </ul>
     </form>

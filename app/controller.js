@@ -1,3 +1,4 @@
+
 dia.controller('simpleController', function ($scope) {
 
     /**model:
@@ -69,8 +70,19 @@ dia.controller('simpleController', function ($scope) {
     $scope.image = {};
     $scope.video = {};
 
+    $scope.filter = {};
+    $scope.filters = [];
 
     // ui_variables
+
+    $scope.currentProfile = $scope.profile[0];
+    $scope.watchedProfile = new Profile();
+    $scope.currentprofile = {};
+    $scope.currentReceiver = {};
+
+    $scope.currentMessageReceiver = new Profile()
+    $scope.currentMessages = [];
+    $scope.writtenMessage = "";
 
     $scope.indextopic = 0;
     $scope.topictopic = {};
@@ -80,8 +92,11 @@ dia.controller('simpleController', function ($scope) {
     $scope.articleTopic = "";
 
     $scope.query = "";
-    $scope.profileName = "";
+    $scope.typedProfileName = "";
     $scope.profileUni = "";
+    $scope.typedName = "";
+    $scope.typedUni = "";
+
 
     $scope.topicindex = 0;
     $scope.commentarrow = {};
@@ -95,6 +110,7 @@ dia.controller('simpleController', function ($scope) {
     function Profile(name, uni) {
         this.name = name;
         this.uni = uni;
+        this.messages = [];
     }
 
     function Topic(name, owner, vts) {
@@ -110,6 +126,9 @@ dia.controller('simpleController', function ($scope) {
         this.voteOptions = [];
     }
 
+    function Filter() {
+        this.function = {};
+    }
 
     function VoteOption(text) {
         this.text = text;
@@ -118,11 +137,18 @@ dia.controller('simpleController', function ($scope) {
     function Message(text, receiver) {
         this.text = text;
         this.receiver = receiver;
+        this.dateOfSend = Date.now();
     }
 
 
-    function Background(text) {
+    function Background(title, text, source) {
+        this.title = title;
         this.text = text;
+        this.owner = {};
+        this.source = source;
+        this.img = {};
+
+
     }
 
     function Commentarrow(id) {
@@ -151,19 +177,51 @@ dia.controller('simpleController', function ($scope) {
         $scope.topic.finalVotingResults.push(
             $scope.finalVotingResult = new FinalVotingResult(voteoptionname)
         )
-    }
-    $scope.fillMessages = function () {
-        $scope.messages.push(
-            $scope.message1 = new Message("Hey, whazzup?", {name: 'Danny', uni: 'Fuwa'}),
-            $scope.message2 = new Message("Catch u later", {name: 'Nico', uni: 'Schma'}),
-            $scope.message3 = new Message("Alright", {name: 'Chris', uni: 'Schma'}),
-            $scope.message4 = new Message("Wonderful day", {name: 'James', uni: 'Schma'}),
-            $scope.message5 = new Message("Haha", {name: 'Julia', uni: 'Schma'}),
-            $scope.message6 = new Message("You go to uni tmr?", {name: 'Bob', uni: 'Schma'}),
-            $scope.message7 = new Message("Exercise?", {name: 'Thomas', uni: 'Schma'})
-        )
     };
 
+    $scope.fillProfiles = function () {
+        $scope.profile10 = $scope.createProfile('Danny', 'Fuwa');
+        $scope.profile11 = $scope.createProfile('Nico', 'Schma');
+        $scope.profile12 = $scope.createProfile('Chris', 'Mainz');
+        $scope.profile13 = $scope.createProfile('James', 'Glasgow College');
+        $scope.profile14 = $scope.createProfile('Julia', 'Freiburg');
+        $scope.profile15 = $scope.createProfile('Bob', 'Schma');
+        $scope.profile16 = $scope.createProfile('Thomas', 'Glasgow Strath');
+    }
+
+    $scope.fillMessages = function () {
+
+        $scope.fillProfiles();
+
+        $scope.currentProfile.messages.push(
+            $scope.message1 = new Message("Hey, whazzup?",
+               $scope.profile10, $scope.currentProfile),
+            $scope.message2 = new Message("Catch u later",
+                $scope.profile11, $scope.currentProfile),
+            $scope.message3 = new Message("Alright",
+                $scope.profile12, $scope.currentProfile),
+            $scope.message4 = new Message("Wonderful day",
+                $scope.profile13, $scope.currentProfile),
+            $scope.message5 = new Message("Haha",
+                $scope.profile14, $scope.currentProfile),
+            $scope.message6 = new Message("You go to uni tmr?",
+                $scope.profile15, $scope.currentProfile),
+            $scope.message7 = new Message("Exercise?",
+                $scope.profile16, $scope.currentProfile)
+        )
+
+        $scope.currentMessages = $scope.currentProfile.messages;
+    };
+
+
+    $scope.writeMessage = function (text, receiver, sender) {
+        $scope.currentProfile.messages.push(
+            $scope.newMessage = new Message(text, receiver, sender)
+        )
+        receiver.messages.push(
+            $scope.newMessage
+        )
+    };
 
 
     $scope.fillVoteOptions = function () {
@@ -184,48 +242,72 @@ dia.controller('simpleController', function ($scope) {
     $scope.fillBackgrounds = function () {
 
 
+        for (var i = 0; i < $scope.topics.length; i++) {
 
-        for (var i=0; i<$scope.topics.length; i++) {
-
-            if(i==0){
+            if (i == 0) {
 
                 $scope.topics[i].backgrounds.push(
-                    $scope.background1 = new Background("Google Source"),
-                    $scope.background2 = new Background("Google Source"),
-                    $scope.background3 = new Background("Bing Source")
+                    $scope.background1 = new Background("UKs high speed broadband",
+                        "In UK millions of people don t have the opportunity to have high broadband rates",
+                        "Google Source"),
+                    $scope.background2 = new Background("No limit on broadband",
+                        "We need access to internet all the time so why limit it? ",
+                        "Computernews Source"),
+                    $scope.background3 = new Background("Why we need internet",
+                        "A long time ago .........................",
+                        "Bing Source")
                 )
             }
-            if(i==1){
+            if (i == 1) {
                 $scope.topics[i].backgrounds.push(
-                    $scope.background3 = new Background("Bing Source"),
-                    $scope.background4 = new Background("Wikipedia Source"),
-                    $scope.background5 = new Background("Google Source"),
-                    $scope.background6 = new Background("BBC Source")
+                    $scope.background1 = new Background("UKs high student fees",
+                        "In UK millions of people don t have the money to pay tution fees",
+                        "Google Source"),
+                    $scope.background2 = new Background("Students protest",
+                        "In front of Strathclyde Uni thousands of students stayed at home",
+                        "Google Source"),
+                    $scope.background3 = new Background("Why we need unis",
+                        "Our history begins................",
+                        "Bing Source"),
+                    $scope.background4 = new Background("Don t want pay", "", "Wikipedia Source"))
+            }
+            if (i == 2) {
+                $scope.topics[i].backgrounds.push(
+                    $scope.background6 = new Background("Coffee and Health",
+                        "Coffee makes strong and happy. This was shown in the last study",
+                        "BBC Source"),
+                    $scope.background7 = new Background("Don t feel good after Coffee?",
+                        "This medicine might help ....",
+                        "Google Source"),
+                    $scope.background3 = new Background("Why we need coffe",
+                        "A long time ago .........................",
+                        "Bing Source"),
+                    $scope.background4 = new Background("The best of Coffee",
+                        "Why paying for something that makes our ecounomy productive",
+                        "Wikipedia Source")
                 )
             }
-            if(i==2) {
-                $scope.topics[i].backgrounds.push(
-                    $scope.background6 = new Background("BBC Source"),
-                    $scope.background7 = new Background("Google Source"),
-                    $scope.background3 = new Background("Bing Source"),
-                    $scope.background4 = new Background("Wikipedia Source")
-               )
-            }
 
-            if(i==3) {
+            if (i == 3) {
                 $scope.topics[i].backgrounds.push(
-                    $scope.background1 = new Background("Google Source"),
-                    $scope.background2 = new Background("Google Source"),
-                    $scope.background3 = new Background("Bing Source"),
-                    $scope.background4 = new Background("Wikipedia Source")
+                    $scope.background1 = new Background("UKs high student fees",
+                        "In UK millions of people don t have the money to pay tution fees",
+                        "Google Source"),
+                    $scope.background2 = new Background("Students protest",
+                        "In front of Strathclyde Uni thousands of students stayed at home",
+                        "Google Source"),
+                    $scope.background3 = new Background("Why we need unis",
+                        "Our history begins................",
+                        "Bing Source"),
+                    $scope.background4 = new Background("Don t want pay", "", "Wikipedia Source")
                 )
             }
 
         }
     };
 
-    $scope.fillComments = function (){
-        for (var i=0; i<$scope.topics.length; i++) {
+    $scope.fillComments = function () {
+        for (var i = 0; i < $scope.topics.length; i++) {
             $scope.topics[i].comments.push(
                 $scope.comment1 = new Comment("Nice, I like it", $scope.topic),
                 $scope.comment2 = new Comment("Ahoi", $scope.topic),
@@ -253,12 +335,51 @@ dia.controller('simpleController', function ($scope) {
         $scope.selectTopic($scope.topic2);
     };
 
+    $scope.selectCurrentProfile = function (profile) {
+
+        $scope.currentProfile = profile;
+    };
+
+    $scope.selectWatchedProfile = function (profile) {
+
+        $scope.watchedProfile = profile;
+    };
+
+    $scope.selectMessageReceiver = function (profile) {
+        $scope.currentMessageReceiver = profile;
+    };
+
+    $scope.registerProfile = function (name, uni) {
+
+        $scope.newProfile = $scope.createProfile(name, uni);
+
+        $scope.selectCurrentProfile($scope.newProfile);
+
+        return $scope.newProfile;
+    };
 
     $scope.createProfile = function (name, uni) {
         $scope.profiles.push(
             $scope.newProfile = new Profile(name, uni)
         );
 
+        return $scope.newProfile;
+    };
+
+    $scope.getProfile = function (profileName) {
+        var returnProfile;
+        for (i = 0; i < $scope.profiles.length; i++) {
+            if ($scope.profiles[i].name == profileName) {
+                returnProfile = $scope.profiles[i];
+                break;
+            }
+        }
+        return returnProfile;
+    };
+
+    $scope.loginProfile = function (name) {
+        $scope.profile = $scope.getProfile(name);
+        $scope.selectCurrentProfile($scope.profile);
     };
 
 
@@ -267,7 +388,7 @@ dia.controller('simpleController', function ($scope) {
     };
 
     $scope.toggleCommentAddSection = function (id) {
-        $('.commentingArea-' +id).toggle();
+        $('.commentingArea-' + id).toggle();
     };
 
     $scope.toggle = function (id) {
@@ -295,7 +416,7 @@ dia.controller('simpleController', function ($scope) {
 
         var votingResults = [];
 
-        for (var i=0; i<topic.votes.length; i++) {
+        for (var i = 0; i < topic.votes.length; i++) {
             votingResults.push(
                 topic.votes[i].voteOption.text
             )
@@ -305,14 +426,13 @@ dia.controller('simpleController', function ($scope) {
         // result = {voteOption1: x; voteOption2: y}
 
 
-        for(var d=0; d<$scope.topic.finalVotingResults.length; d++) {
-            for (var ii=0; ii<votingResults.length; ii++) {
+        for (var d = 0; d < $scope.topic.finalVotingResults.length; d++) {
+            for (var ii = 0; ii < votingResults.length; ii++) {
 
                 var voteOptionName = $scope.topic.finalVotingResults[d].voteOptionName;
 
 
-
-                if(votingResults[ii]==voteOptionName){
+                if (votingResults[ii] == voteOptionName) {
                     $scope.topic.finalVotingResults[d].counter++;
                 }
 
@@ -327,10 +447,10 @@ dia.controller('simpleController', function ($scope) {
     };
     $scope.checkArrayForAttributes = function (array, attribute) {
 
-        if(array.length!=0){
-            for(var m=0; m<array.length; m++) {
+        if (array.length != 0) {
+            for (var m = 0; m < array.length; m++) {
 
-                if(array[m].hasOwnProperty(attribute)){
+                if (array[m].hasOwnProperty(attribute)) {
                     return true;
                 }
                 else {
@@ -338,9 +458,70 @@ dia.controller('simpleController', function ($scope) {
                 }
             }
         }
-        else{
+        else {
             return false;
         }
 
     };
+    $scope.drawChart = function () {
+        var myLineChart
+    }
+
+
+    $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
+    $scope.series = ['Series A', 'Series B'];
+    $scope.data = [
+        [65, 59, 80, 81, 56, 55, 40],
+        [28, 48, 40, 19, 86, 27, 90]
+    ];
+    $scope.onClick = function (points, evt) {
+        console.log(points, evt);
+    };
+
+    $scope.checkIfSenderOrReceiver = function () {
+        if ($scope.currentProfile == $scope.currentMessageReceiver) {
+            return $scope.currentMessageReceiver.name;
+
+        }
+        else {
+            return "Me";
+        }
+    };
+
+
+    //FILTERS
+
+    $scope.filterProfileProperties = function (property) {
+        if (property == $scope.messages) {
+            return false
+        }
+        else {
+            return true
+        }
+
+
+    }
+
+
+    $scope.checkReceiverInMessages = function () {
+        return function (item) {
+
+            var result = false;
+
+                if (item.receiver == $scope.currentMessageReceiver)
+                {
+                    result = true;
+
+                }
+
+            return result;
+        }
+
+    };
+
+
+
 });
+
+
+

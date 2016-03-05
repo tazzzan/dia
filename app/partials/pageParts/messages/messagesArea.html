@@ -1,17 +1,21 @@
-<input type="text" ng-model="profileName" placeholder="filter by person" style="width: 100%; height: 2%"/>
+<input id="inputFilterPersonInMessages" type="text" ng-model="typedProfileName" placeholder="Filter by person or content"
+       onfocus="this.placeholder = '' "/>
 
 <div id="messageContainer">
 
 
-    <div id="messageBox" ng-repeat="message in messages | filter:profileName">
+    <div  ng-repeat="b in currentProfile.messages  | filter: typedProfileName | orderBy: dateOfSend : true">
 
         <a id="receiverInMessageBox"
-           ui-sref="main.messages">
-            {{message.receiver.name}}
+           ui-sref="main.messages"
+           ng-click="selectMessageReceiver(b.receiver)">
+
+            {{b.receiver.name}}
+
         </a>
 
         <a id="textOfMessage">
-            {{message.text}}
+            {{b.text}}
         </a>
 
 

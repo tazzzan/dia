@@ -1,5 +1,26 @@
 <div id="background">
 
-    <div background-section background='item' ng-repeat="item in selectedTopic.backgrounds"></div>
+    <div id="informationTopic">
+
+
+           <chart-box chartdata='chartData'>
+
+           </chart-box>
+
+        <canvas id="line" class="chart chart-line" chart-data="data"
+                chart-labels="labels" chart-legend="true" chart-series="series"
+                chart-click="onClick" >
+        </canvas>
+
+
+    </div>
+
+    <div id="informationFromSources">
+
+        <div background-section background='item' ng-repeat="item in selectedTopic.backgrounds">
+
+        </div>
+
+    </div>
 
 </div>
