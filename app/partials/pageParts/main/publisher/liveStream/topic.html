@@ -1,6 +1,8 @@
 <div class="topic">
-        <div  id="topicAreaTitle">
-            <edit-in-place value="topic.name"></edit-in-place>
+        <button id="buttonDeleteTopic" ng-click="deleteTopic(topic.idInLiveStream)"> Delete this topic </button>
+
+        <div  id="topicAreaTitle" >
+            <edit-in-place value="topic.name" object="topic"></edit-in-place>
 
         </div>
 

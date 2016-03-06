@@ -194,6 +194,12 @@ sections of:
     width: 15%;
     height: 80%;
 }
+#buttonAddTopic {
+    float: left;
+    font-size: 80%;
+    width: 40%;
+    height: 20px;
+}
 /*
 elements of:
 #comment
@@ -214,4 +220,42 @@ elements of:
     width: 100%;
     height: 3%;
     background-color: grey;
+}
+
+.createTopicArrow {
+    float: left;
+    width: 100%;
+    height: 3%;
+    background-color: grey;
+    text-align: center;
+    color: white;
+    font-style: oblique;
+}
+
+#inputTopicTitle{
+    float: left;
+    width: 80%;
+    height: 20px;
+}
+#inputTopicDescription {
+    float: left;
+    width: 80%;
+    height: 80px;
+}
+
+#inputTopicBackground {
+    float: left;
+    width: 80%;
+    height: 80px;
+}
+
+#inputTopicVoteOptions {
+    float: left;
+    width: 80%;
+    height: 20px;
+}
+
+#buttonDeleteTopic {
+    width: 100%;
+    height: 3%;
 }

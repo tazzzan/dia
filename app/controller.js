@@ -101,8 +101,15 @@ dia.controller('simpleController', function ($scope) {
     $scope.topicindex = 0;
     $scope.commentarrow = {};
     $scope.commentarrow.status = true;
+    $scope.createTopicadd = {};
+    $scope.createTopicadd.status = true;
 
     $scope.commentAdded = "";
+
+    $scope.topicTitleAdded = "";
+    $scope.topicDescriptionAdded = "";
+    $scope.topicBackgroundAdded = "";
+    $scope.topicOptionsAdded = "";
 
 
     // Model Constructors
@@ -154,6 +161,10 @@ dia.controller('simpleController', function ($scope) {
 
     function Commentarrow(id) {
         this.id = id;
+        this.status = true;
+    }
+
+    function CreateTopicadd() {
         this.status = true;
     }
 
@@ -392,6 +403,10 @@ dia.controller('simpleController', function ($scope) {
         $('.commentingArea-' + id).toggle();
     };
 
+    $scope.toggleCreateTopicArea = function () {
+        $scope.createTopicadd.status = !$scope.createTopicadd.status;
+    };
+
     $scope.toggle = function (id) {
         $scope.commentarrow.status = !$scope.commentarrow.status;
     };
@@ -521,6 +536,34 @@ dia.controller('simpleController', function ($scope) {
     };
 
 
+    $scope.addTopic = function (topicTitleAdded, topicDescriptionAdded, topicBackgroundAdded, topicOptionsAdded) {
+        $scope.topic = new Topic(topicTitleAdded, $scope.currentProfile.name);
+        $scope.topic.description = topicDescriptionAdded;
+        $scope.topic.backgrounds.push (
+            $scope.background = new Background(topicBackgroundAdded)
+        );
+
+        var res = topicOptionsAdded.split(" ");
+
+
+            for (i=0; i<res.length; i++) {
+                $scope.topic.voteOptions.push(
+                    $scope.option = new VoteOption(res[i])
+                )
+            }
+
+        $scope.topics.push(
+            $scope.topic
+        )
+    }
+
+    $scope.deleteTopic = function (id) {
+        for (i=0; i<$scope.topics.length; i++) {
+            if ($scope.topics[i].idInLiveStream == id){
+                $scope.topics.splice(i, 1);
+            }
+        }
+    }
 
 });
 

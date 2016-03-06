@@ -205,6 +205,19 @@ dia.directive('backgroundSection', function () {
     };
 });
 
+dia.directive('backgroundpublisherSection', function () {
+    return {
+        restrict: 'A',
+        transclude: true,
+        scope: {background: '='},
+        templateUrl: 'partials/pageParts/main/publisher/background/bodyBackground.html',
+        link: function (scope, element, attrs) {
+            $(element).draggable({appendTo: 'body', revert: true});
+        }
+
+    };
+});
+
 dia.directive('dragDrop', function () {
     return {
         restrict: 'E',
@@ -250,6 +263,16 @@ dia.directive('commentArrow', function () {
         template: '<div class="commentArrow">  </div>',
         link: function ($scope, scope) {
             $scope.commentarrow = new Commentarrow(scope.topicIndex);
+        }
+    }
+});
+dia.directive('createTopicadd', function () {
+    return {
+        restrict: 'E',
+        transclude: true,
+        template: '<div class="createTopicArrow"> Add new Topic </div>',
+        link: function ($scope, scope) {
+            $scope.createTopicadd = new CreateTopicadd();
         }
     }
 });
@@ -454,7 +477,8 @@ dia.directive('messageBox', function () {
 dia.directive( 'editInPlace', function() {
     return {
         restrict: 'E',
-        scope: { value: '=' },
+        scope: { value: '=',
+                 object: '='},
         template: '<span ng-click="edit()" ng-bind="value"></span><input ng-model="value">',
         link: function ( $scope, element, attrs ) {
             // Let's get a reference to the input element, as we'll want to reference it.
@@ -483,7 +507,11 @@ dia.directive( 'editInPlace', function() {
             inputElement.prop( 'onblur', function() {
                 $scope.editing = false;
                 element.removeClass( 'active' );
+
             });
+
+            $scope.selectTopic(object);
+            $scope.$apply();
         }
     };
 });
