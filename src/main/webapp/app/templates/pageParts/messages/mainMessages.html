@@ -1,0 +1,47 @@
+
+
+    <div id="topAreaMessageBox">
+
+
+            <a id="receiverInfoArea"
+               ui-sref="main.profile"
+               ng-click="selectWatchedProfile(currentMessageReceiver)">
+                <p> You are writing with: {{ " "+ currentMessageReceiver.name }}</p>
+
+
+            </a>
+
+
+    </div>
+    <div id="leftAreaMessageMain">
+
+        <div id="mainAreaMessageBox">
+
+
+            <div id="messageBox" ng-repeat=" a in currentProfile.messages | filter:checkReceiverInMessages()">
+                <p> {{ a.dateOfSend  | date:'dd.MM.yyyy | HH:mm:ss' }} {{ " | "+ checkIfSenderOrReceiver() }} </p>
+                <p> {{ a.text }}</p>
+            </div>
+
+        </div>
+
+        <div id="writingMessageArea">
+
+            <input id="inputMessage" type="text" placeholder="write new message here" ng-model="writtenMessage">
+            <button id="buttonSendMessage" class="buttonsRoleSelection"
+                    ng-click="writeMessage(writtenMessage, currentMessageReceiver, currentProfile); writtenMessage = null">
+                Write
+            </button>
+
+        </div>
+
+    </div>
+
+    <div id="rightAreaMessageMain">
+
+
+    </div>
+
+
+
+

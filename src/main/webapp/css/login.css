@@ -1,0 +1,186 @@
+
+#containerLogin {
+    background-color: white;
+    width: 1280px;
+    height: 1024px;
+    margin:auto;
+}
+
+#headerLogin {
+    background-color: #228B22;
+    width: 100%;
+    height: 3%;
+    margin-bottom: 2;
+}
+
+#liveStreamAreaAtLogin {
+    background-color: white;
+    width: 40%;
+    float: left;
+    padding-left:5%;
+    padding-right: 5%;
+}
+
+#mainLogin {
+    width: 100%;
+    float:left;
+    background-color: #228B22;
+}
+
+
+#registerLogin {
+    background-color: lightgrey;
+    width: 50%;
+    color: lightgrey;
+    float: left;
+}
+
+input:focus{
+    background-color:white;
+}
+.flat-form {
+    background: #228B22;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.tabs {
+    background:#006400 ;
+    height:5%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+    position: relative;
+    display: block;
+    margin-bottom: 3%;
+}
+.tabs li {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+.tabs a {
+    background: #006400;  /*topbar c0392b  #88565b */
+    display: block;
+    float: left;
+    text-decoration: none;
+    color: lightgrey;
+    font-size: 16px;
+    padding: 12px 22px 12px 22px;
+    /*border-right: 1px solid @tab-border;*/
+
+}
+.tabs li:last-child a {
+    border-right: none;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+}
+.tabs a.active {
+    background: lightgrey;  /*topbar e74c3c  */
+    border-right: none;
+    color:#006400;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+.form-action {
+    padding: 0 20px;
+    position: relative;
+}
+
+.form-action h1 {
+    font-size: 42px;
+    padding-bottom: 10px;
+}
+.form-action p {
+    font-size: 12px;
+    padding-bottom: 10px;
+    line-height: 25px;
+}
+form {
+    padding-right: 20px !important;
+}
+form input[type=text],
+form input[type=password],
+form input[type=submit] {
+}
+
+form input[type=text],
+form input[type=password] {
+    width: 80%;
+    height: 4%;
+    margin-bottom: 2%;
+    padding-left: 3%;
+    background: #fff;
+    border: none;
+    color: black;
+    outline: none;
+}
+
+.dark-box {
+    background: #00FA9A;
+    box-shadow: 1px 3px 3px #3d0100 inset;
+    height: 40px;
+    width: 20%;
+}
+.form-action .dark-box.bottom {
+    position: absolute;
+    right: 0;
+    bottom: -24px;
+}
+.tabs + .dark-box.top {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
+
+.button {
+    border: none;
+    display: block;
+    background: lightgrey;
+    height: 4%;
+    width: 20%;
+    color: #228B22;
+    text-align: center;
+    border-radius: 5px;
+    -webkit-transition: all 0.15s linear;
+    -moz-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+.button:hover {
+    background: darkgrey;
+    color: darkgreen;
+
+}
+
+.button:active {
+    background: darkgrey;
+    color: darkgreen;
+
+}
+
+::-webkit-input-placeholder {
+    color:darkgreen ;
+}
+:-moz-placeholder {
+
+    color: forestgreen;
+}
+::-moz-placeholder {
+
+    color: forestgreen;
+}
+:-ms-input-placeholder {
+    color: forestgreen;
+}

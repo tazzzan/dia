@@ -1,0 +1,37 @@
+
+<comment-arrow data-ng-click="toggleCommentsSection($index)">
+</comment-arrow>
+
+
+<div id="commentsSection-{{$index}}" >
+
+    <div id="commentsActual">
+
+        <div class="comment">
+
+            <div
+                    data-ng-repeat="c in topic.comments"
+                    comment-section comment='c'>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="commentsBest">
+
+        <div class="comment">
+
+            <div
+                    ng-repeat="c in topic.comments"
+                    comment-section comment='c'>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <hr class="hrTopic" >
+
+</div>

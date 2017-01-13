@@ -1,0 +1,7 @@
+<!-- Here ui_topic -->
+            
+<div data-ng-repeat="topic in topics | filter:query" topic-section indextopic="{{$index}}" topictopic='topic'>
+
+    <div data-ng-include="'app/templates/pageParts/main/seekerAndVoter/liveStream/topic.html'"> </div>
+
+</div>

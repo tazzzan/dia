@@ -1,0 +1,62 @@
+<body>
+
+<button data-ng-click="goToLogin()">click me to login</button>
+<!-- Here ui_container -->
+<div id="container">
+
+
+    <!-- Here ui_header -->
+    <div id="header">
+        <a
+                class="headerTopic"
+                ui-sref="login.loginTab">Dia
+        </a>
+    </div>
+
+    <!-- Here ui_search -->
+    <div id="search">
+
+        <input class="inputBoxSearch" type="text" ng-model="query"/>
+        <button class="buttonSearch">SEARCH</button>
+
+    </div>
+
+
+    <!-- Here ui_sidebar -->
+    <div id="sidebar">
+
+        <div id="favoriteTopics">
+            <div ui-view="favourites"></div>
+        </div>
+
+        <div id="messagesArea">
+            <div ui-view="messages"></div>
+        </div>
+
+    </div>
+
+
+    <!-- Here ui_left-->
+    <div id="left">
+
+
+        <!-- Here ui_profile -->
+        <div id="profile">
+            <div ui-view="profile"></div>
+        </div>
+
+        <!-- Here ui_nav -->
+        <div id="nav">
+            <div ui-view="navbar"></div>
+        </div>
+
+
+    </div>
+    <!-- Here ui_main -->
+    <div id="main">
+        <div ui-view="main"></div>
+    </div>
+
+
+</div>
+</body>

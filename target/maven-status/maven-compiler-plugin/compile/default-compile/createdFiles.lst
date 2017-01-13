@@ -1,0 +1,7 @@
+com/dia/app/service/ProfileService.class
+com/dia/app/model/Profile.class
+com/dia/app/dbrequests/DBAccess.class
+com/dia/app/controller/AdressController.class
+com/dia/app/configuration/JPAConfig.class
+com/dia/app/initializer/AppInitializer.class
+com/dia/app/configuration/DiaConfiguration.class
