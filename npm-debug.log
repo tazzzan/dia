@@ -1,0 +1,415 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/bin/npm', 'install', '-g', 'grunt-cli' ]
+2 info using npm@3.7.1
+3 info using node@v0.10.37
+4 verbose node symlink /usr/bin/node
+5 silly loadCurrentTree Starting
+6 silly install loadCurrentTree
+7 silly install readGlobalPackageData
+8 silly fetchPackageMetaData grunt-cli
+9 silly fetchNamedPackageData grunt-cli
+10 silly mapToRegistry name grunt-cli
+11 silly mapToRegistry using default registry
+12 silly mapToRegistry registry https://registry.npmjs.org/
+13 silly mapToRegistry uri https://registry.npmjs.org/grunt-cli
+14 verbose request uri https://registry.npmjs.org/grunt-cli
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 02:04:08
+17 verbose request id 372e34048bec17fc
+18 http request GET https://registry.npmjs.org/grunt-cli
+19 http 200 https://registry.npmjs.org/grunt-cli
+20 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+20 verbose headers   etag: '"7Y60N0S0H37BXUE2ATKTAFBOA"',
+20 verbose headers   'content-type': 'application/json',
+20 verbose headers   'cache-control': 'max-age=300',
+20 verbose headers   'content-length': '24184',
+20 verbose headers   'accept-ranges': 'bytes',
+20 verbose headers   date: 'Thu, 25 Feb 2016 02:04:08 GMT',
+20 verbose headers   via: '1.1 varnish',
+20 verbose headers   age: '230',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'x-served-by': 'cache-lcy1126-LCY',
+20 verbose headers   'x-cache': 'HIT',
+20 verbose headers   'x-cache-hits': '2',
+20 verbose headers   'x-timer': 'S1456365848.795130,VS0,VE0',
+20 verbose headers   vary: 'Accept' }
+21 silly get cb [ 200,
+21 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+21 silly get     etag: '"7Y60N0S0H37BXUE2ATKTAFBOA"',
+21 silly get     'content-type': 'application/json',
+21 silly get     'cache-control': 'max-age=300',
+21 silly get     'content-length': '24184',
+21 silly get     'accept-ranges': 'bytes',
+21 silly get     date: 'Thu, 25 Feb 2016 02:04:08 GMT',
+21 silly get     via: '1.1 varnish',
+21 silly get     age: '230',
+21 silly get     connection: 'keep-alive',
+21 silly get     'x-served-by': 'cache-lcy1126-LCY',
+21 silly get     'x-cache': 'HIT',
+21 silly get     'x-cache-hits': '2',
+21 silly get     'x-timer': 'S1456365848.795130,VS0,VE0',
+21 silly get     vary: 'Accept' } ]
+22 verbose get saving grunt-cli to /home/ilja/.npm/registry.npmjs.org/grunt-cli/.cache.json
+23 verbose correctMkdir /home/ilja/.npm correctMkdir not in flight; initializing
+24 silly install normalizeTree
+25 silly loadCurrentTree Finishing
+26 silly loadIdealTree Starting
+27 silly install loadIdealTree
+28 silly cloneCurrentTree Starting
+29 silly install cloneCurrentTreeToIdealTree
+30 silly cloneCurrentTree Finishing
+31 silly loadShrinkwrap Starting
+32 silly install loadShrinkwrap
+33 silly loadShrinkwrap Finishing
+34 silly loadAllDepsIntoIdealTree Starting
+35 silly install loadAllDepsIntoIdealTree
+36 silly resolveWithNewModule grunt-cli@0.1.13 checking installable status
+37 silly cache add args [ 'grunt-cli', null ]
+38 verbose cache add spec grunt-cli
+39 silly cache add parsed spec { raw: 'grunt-cli',
+39 silly cache add   scope: null,
+39 silly cache add   name: 'grunt-cli',
+39 silly cache add   rawSpec: '',
+39 silly cache add   spec: 'latest',
+39 silly cache add   type: 'tag' }
+40 silly addNamed grunt-cli@latest
+41 verbose addNamed "latest" is being treated as a dist-tag for grunt-cli
+42 info addNameTag [ 'grunt-cli', 'latest' ]
+43 silly mapToRegistry name grunt-cli
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry uri https://registry.npmjs.org/grunt-cli
+47 verbose addNameTag registry:https://registry.npmjs.org/grunt-cli not in flight; fetching
+48 verbose get https://registry.npmjs.org/grunt-cli not expired, no request
+49 silly addNameTag next cb for grunt-cli with tag latest
+50 silly addNamed grunt-cli@0.1.13
+51 verbose addNamed "0.1.13" is a plain semver version for grunt-cli
+52 silly mapToRegistry name grunt-cli
+53 silly mapToRegistry using default registry
+54 silly mapToRegistry registry https://registry.npmjs.org/
+55 silly mapToRegistry uri https://registry.npmjs.org/grunt-cli
+56 verbose addRemoteTarball https://registry.npmjs.org/grunt-cli/-/grunt-cli-0.1.13.tgz not in flight; adding
+57 verbose addRemoteTarball [ 'https://registry.npmjs.org/grunt-cli/-/grunt-cli-0.1.13.tgz',
+57 verbose addRemoteTarball   'e9ebc4047631f5012d922770c39378133cad10f4' ]
+58 info retry fetch attempt 1 at 02:04:08
+59 info attempt registry request try #1 at 02:04:08
+60 http fetch GET https://registry.npmjs.org/grunt-cli/-/grunt-cli-0.1.13.tgz
+61 http fetch 200 https://registry.npmjs.org/grunt-cli/-/grunt-cli-0.1.13.tgz
+62 silly fetchAndShaCheck shasum e9ebc4047631f5012d922770c39378133cad10f4
+63 verbose addTmpTarball /tmp/npm-15347-89a30920/registry.npmjs.org/grunt-cli/-/grunt-cli-0.1.13.tgz not in flight; adding
+64 verbose addTmpTarball already have metadata; skipping unpack for grunt-cli@0.1.13
+65 verbose correctMkdir /home/ilja/.npm correctMkdir not in flight; initializing
+66 silly cache afterAdd grunt-cli@0.1.13
+67 verbose afterAdd /home/ilja/.npm/grunt-cli/0.1.13/package/package.json not in flight; writing
+68 verbose correctMkdir /home/ilja/.npm correctMkdir not in flight; initializing
+69 verbose afterAdd /home/ilja/.npm/grunt-cli/0.1.13/package/package.json written
+70 silly fetchNamedPackageData nopt
+71 silly mapToRegistry name nopt
+72 silly mapToRegistry using default registry
+73 silly mapToRegistry registry https://registry.npmjs.org/
+74 silly mapToRegistry uri https://registry.npmjs.org/nopt
+75 silly fetchNamedPackageData findup-sync
+76 silly mapToRegistry name findup-sync
+77 silly mapToRegistry using default registry
+78 silly mapToRegistry registry https://registry.npmjs.org/
+79 silly mapToRegistry uri https://registry.npmjs.org/findup-sync
+80 silly fetchNamedPackageData resolve
+81 silly mapToRegistry name resolve
+82 silly mapToRegistry using default registry
+83 silly mapToRegistry registry https://registry.npmjs.org/
+84 silly mapToRegistry uri https://registry.npmjs.org/resolve
+85 verbose request uri https://registry.npmjs.org/resolve
+86 verbose request no auth needed
+87 info attempt registry request try #1 at 02:04:09
+88 http request GET https://registry.npmjs.org/resolve
+89 verbose request uri https://registry.npmjs.org/findup-sync
+90 verbose request no auth needed
+91 info attempt registry request try #1 at 02:04:09
+92 verbose etag "4T2YM1183BMIEH25O8P2RBD4U"
+93 http request GET https://registry.npmjs.org/findup-sync
+94 verbose request uri https://registry.npmjs.org/nopt
+95 verbose request no auth needed
+96 info attempt registry request try #1 at 02:04:09
+97 verbose etag "EOZTX9OIF152XUTZOK5DSHSTH"
+98 http request GET https://registry.npmjs.org/nopt
+99 http 200 https://registry.npmjs.org/resolve
+100 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+100 verbose headers   etag: '"E5LYAO9ANDLZYP3M2AL72NV6M"',
+100 verbose headers   'content-type': 'application/json',
+100 verbose headers   'cache-control': 'max-age=300',
+100 verbose headers   'content-length': '44301',
+100 verbose headers   'accept-ranges': 'bytes',
+100 verbose headers   date: 'Thu, 25 Feb 2016 02:04:09 GMT',
+100 verbose headers   via: '1.1 varnish',
+100 verbose headers   age: '99',
+100 verbose headers   connection: 'keep-alive',
+100 verbose headers   'x-served-by': 'cache-lcy1127-LCY',
+100 verbose headers   'x-cache': 'HIT',
+100 verbose headers   'x-cache-hits': '1',
+100 verbose headers   'x-timer': 'S1456365849.293429,VS0,VE0',
+100 verbose headers   vary: 'Accept' }
+101 silly get cb [ 200,
+101 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+101 silly get     etag: '"E5LYAO9ANDLZYP3M2AL72NV6M"',
+101 silly get     'content-type': 'application/json',
+101 silly get     'cache-control': 'max-age=300',
+101 silly get     'content-length': '44301',
+101 silly get     'accept-ranges': 'bytes',
+101 silly get     date: 'Thu, 25 Feb 2016 02:04:09 GMT',
+101 silly get     via: '1.1 varnish',
+101 silly get     age: '99',
+101 silly get     connection: 'keep-alive',
+101 silly get     'x-served-by': 'cache-lcy1127-LCY',
+101 silly get     'x-cache': 'HIT',
+101 silly get     'x-cache-hits': '1',
+101 silly get     'x-timer': 'S1456365849.293429,VS0,VE0',
+101 silly get     vary: 'Accept' } ]
+102 verbose get saving resolve to /home/ilja/.npm/registry.npmjs.org/resolve/.cache.json
+103 verbose correctMkdir /home/ilja/.npm correctMkdir not in flight; initializing
+104 silly resolveWithNewModule resolve@0.3.1 checking installable status
+105 silly cache add args [ 'resolve@~0.3.1', null ]
+106 verbose cache add spec resolve@~0.3.1
+107 silly cache add parsed spec { raw: 'resolve@~0.3.1',
+107 silly cache add   scope: null,
+107 silly cache add   name: 'resolve',
+107 silly cache add   rawSpec: '~0.3.1',
+107 silly cache add   spec: '>=0.3.1 <0.4.0',
+107 silly cache add   type: 'range' }
+108 silly addNamed resolve@>=0.3.1 <0.4.0
+109 verbose addNamed ">=0.3.1 <0.4.0" is a valid semver range for resolve
+110 silly addNameRange { name: 'resolve', range: '>=0.3.1 <0.4.0', hasData: false }
+111 silly mapToRegistry name resolve
+112 silly mapToRegistry using default registry
+113 silly mapToRegistry registry https://registry.npmjs.org/
+114 silly mapToRegistry uri https://registry.npmjs.org/resolve
+115 verbose addNameRange registry:https://registry.npmjs.org/resolve not in flight; fetching
+116 http 304 https://registry.npmjs.org/findup-sync
+117 verbose headers { date: 'Thu, 25 Feb 2016 02:04:09 GMT',
+117 verbose headers   via: '1.1 varnish',
+117 verbose headers   'cache-control': 'max-age=300',
+117 verbose headers   etag: '"4T2YM1183BMIEH25O8P2RBD4U"',
+117 verbose headers   age: '230',
+117 verbose headers   connection: 'keep-alive',
+117 verbose headers   'x-served-by': 'cache-lcy1129-LCY',
+117 verbose headers   'x-cache': 'HIT',
+117 verbose headers   'x-cache-hits': '4',
+117 verbose headers   'x-timer': 'S1456365849.354215,VS0,VE0',
+117 verbose headers   vary: 'Accept' }
+118 silly get cb [ 304,
+118 silly get   { date: 'Thu, 25 Feb 2016 02:04:09 GMT',
+118 silly get     via: '1.1 varnish',
+118 silly get     'cache-control': 'max-age=300',
+118 silly get     etag: '"4T2YM1183BMIEH25O8P2RBD4U"',
+118 silly get     age: '230',
+118 silly get     connection: 'keep-alive',
+118 silly get     'x-served-by': 'cache-lcy1129-LCY',
+118 silly get     'x-cache': 'HIT',
+118 silly get     'x-cache-hits': '4',
+118 silly get     'x-timer': 'S1456365849.354215,VS0,VE0',
+118 silly get     vary: 'Accept' } ]
+119 verbose etag https://registry.npmjs.org/findup-sync from cache
+120 verbose get saving findup-sync to /home/ilja/.npm/registry.npmjs.org/findup-sync/.cache.json
+121 verbose correctMkdir /home/ilja/.npm correctMkdir not in flight; initializing
+122 http 304 https://registry.npmjs.org/nopt
+123 verbose headers { date: 'Thu, 25 Feb 2016 02:04:09 GMT',
+123 verbose headers   via: '1.1 varnish',
+123 verbose headers   'cache-control': 'max-age=300',
+123 verbose headers   etag: '"EOZTX9OIF152XUTZOK5DSHSTH"',
+123 verbose headers   age: '38',
+123 verbose headers   connection: 'keep-alive',
+123 verbose headers   'x-served-by': 'cache-lcy1124-LCY',
+123 verbose headers   'x-cache': 'HIT',
+123 verbose headers   'x-cache-hits': '1',
+123 verbose headers   'x-timer': 'S1456365849.357635,VS0,VE0',
+123 verbose headers   vary: 'Accept' }
+124 silly get cb [ 304,
+124 silly get   { date: 'Thu, 25 Feb 2016 02:04:09 GMT',
+124 silly get     via: '1.1 varnish',
+124 silly get     'cache-control': 'max-age=300',
+124 silly get     etag: '"EOZTX9OIF152XUTZOK5DSHSTH"',
+124 silly get     age: '38',
+124 silly get     connection: 'keep-alive',
+124 silly get     'x-served-by': 'cache-lcy1124-LCY',
+124 silly get     'x-cache': 'HIT',
+124 silly get     'x-cache-hits': '1',
+124 silly get     'x-timer': 'S1456365849.357635,VS0,VE0',
+124 silly get     vary: 'Accept' } ]
+125 verbose etag https://registry.npmjs.org/nopt from cache
+126 verbose get saving nopt to /home/ilja/.npm/registry.npmjs.org/nopt/.cache.json
+127 verbose correctMkdir /home/ilja/.npm correctMkdir not in flight; initializing
+128 verbose get https://registry.npmjs.org/resolve not expired, no request
+129 silly addNameRange number 2 { name: 'resolve', range: '>=0.3.1 <0.4.0', hasData: true }
+130 silly addNameRange versions [ 'resolve',
+130 silly addNameRange   [ '0.0.0',
+130 silly addNameRange     '0.0.1',
+130 silly addNameRange     '0.0.2',
+130 silly addNameRange     '0.0.3',
+130 silly addNameRange     '0.0.4',
+130 silly addNameRange     '0.1.0',
+130 silly addNameRange     '0.1.2',
+130 silly addNameRange     '0.1.3',
+130 silly addNameRange     '0.2.0',
+130 silly addNameRange     '0.2.1',
+130 silly addNameRange     '0.2.2',
+130 silly addNameRange     '0.2.3',
+130 silly addNameRange     '0.2.4',
+130 silly addNameRange     '0.2.5',
+130 silly addNameRange     '0.2.6',
+130 silly addNameRange     '0.2.7',
+130 silly addNameRange     '0.2.8',
+130 silly addNameRange     '0.3.0',
+130 silly addNameRange     '0.3.1',
+130 silly addNameRange     '0.4.0',
+130 silly addNameRange     '0.4.1',
+130 silly addNameRange     '0.4.2',
+130 silly addNameRange     '0.4.3',
+130 silly addNameRange     '0.5.0',
+130 silly addNameRange     '0.5.1',
+130 silly addNameRange     '0.6.0',
+130 silly addNameRange     '0.6.1',
+130 silly addNameRange     '0.6.2',
+130 silly addNameRange     '0.6.3',
+130 silly addNameRange     '0.7.0',
+130 silly addNameRange     '0.7.1',
+130 silly addNameRange     '0.7.2',
+130 silly addNameRange     '0.7.3',
+130 silly addNameRange     '0.7.4',
+130 silly addNameRange     '1.0.0',
+130 silly addNameRange     '1.1.0',
+130 silly addNameRange     '1.1.2',
+130 silly addNameRange     '1.1.3',
+130 silly addNameRange     '1.1.4',
+130 silly addNameRange     '1.1.5',
+130 silly addNameRange     '1.1.6',
+130 silly addNameRange     '1.1.7' ] ]
+131 silly addNamed resolve@0.3.1
+132 verbose addNamed "0.3.1" is a plain semver version for resolve
+133 silly mapToRegistry name resolve
+134 silly mapToRegistry using default registry
+135 silly mapToRegistry registry https://registry.npmjs.org/
+136 silly mapToRegistry uri https://registry.npmjs.org/resolve
+137 verbose addRemoteTarball https://registry.npmjs.org/resolve/-/resolve-0.3.1.tgz not in flight; adding
+138 verbose addRemoteTarball [ 'https://registry.npmjs.org/resolve/-/resolve-0.3.1.tgz',
+138 verbose addRemoteTarball   '34c63447c664c70598d1c9b126fc43b2a24310a4' ]
+139 silly resolveWithNewModule findup-sync@0.1.3 checking installable status
+140 silly cache add args [ 'findup-sync@~0.1.0', null ]
+141 verbose cache add spec findup-sync@~0.1.0
+142 silly cache add parsed spec { raw: 'findup-sync@~0.1.0',
+142 silly cache add   scope: null,
+142 silly cache add   name: 'findup-sync',
+142 silly cache add   rawSpec: '~0.1.0',
+142 silly cache add   spec: '>=0.1.0 <0.2.0',
+142 silly cache add   type: 'range' }
+143 silly addNamed findup-sync@>=0.1.0 <0.2.0
+144 verbose addNamed ">=0.1.0 <0.2.0" is a valid semver range for findup-sync
+145 silly addNameRange { name: 'findup-sync', range: '>=0.1.0 <0.2.0', hasData: false }
+146 silly mapToRegistry name findup-sync
+147 silly mapToRegistry using default registry
+148 silly mapToRegistry registry https://registry.npmjs.org/
+149 silly mapToRegistry uri https://registry.npmjs.org/findup-sync
+150 verbose addNameRange registry:https://registry.npmjs.org/findup-sync not in flight; fetching
+151 silly resolveWithNewModule nopt@1.0.10 checking installable status
+152 silly cache add args [ 'nopt@~1.0.10', null ]
+153 verbose cache add spec nopt@~1.0.10
+154 silly cache add parsed spec { raw: 'nopt@~1.0.10',
+154 silly cache add   scope: null,
+154 silly cache add   name: 'nopt',
+154 silly cache add   rawSpec: '~1.0.10',
+154 silly cache add   spec: '>=1.0.10 <1.1.0',
+154 silly cache add   type: 'range' }
+155 silly addNamed nopt@>=1.0.10 <1.1.0
+156 verbose addNamed ">=1.0.10 <1.1.0" is a valid semver range for nopt
+157 silly addNameRange { name: 'nopt', range: '>=1.0.10 <1.1.0', hasData: false }
+158 silly mapToRegistry name nopt
+159 silly mapToRegistry using default registry
+160 silly mapToRegistry registry https://registry.npmjs.org/
+161 silly mapToRegistry uri https://registry.npmjs.org/nopt
+162 verbose addNameRange registry:https://registry.npmjs.org/nopt not in flight; fetching
+163 info retry fetch attempt 1 at 02:04:09
+164 info attempt registry request try #1 at 02:04:09
+165 http fetch GET https://registry.npmjs.org/resolve/-/resolve-0.3.1.tgz
+166 verbose get https://registry.npmjs.org/findup-sync not expired, no request
+167 silly addNameRange number 2 { name: 'findup-sync', range: '>=0.1.0 <0.2.0', hasData: true }
+168 silly addNameRange versions [ 'findup-sync',
+168 silly addNameRange   [ '0.1.0', '0.1.1', '0.1.2', '0.1.3', '0.2.0', '0.2.1', '0.3.0' ] ]
+169 silly addNamed findup-sync@0.1.3
+170 verbose addNamed "0.1.3" is a plain semver version for findup-sync
+171 verbose get https://registry.npmjs.org/nopt not expired, no request
+172 silly addNameRange number 2 { name: 'nopt', range: '>=1.0.10 <1.1.0', hasData: true }
+173 silly addNameRange versions [ 'nopt',
+173 silly addNameRange   [ '1.0.0',
+173 silly addNameRange     '1.0.1',
+173 silly addNameRange     '1.0.2',
+173 silly addNameRange     '1.0.3',
+173 silly addNameRange     '1.0.4',
+173 silly addNameRange     '1.0.5',
+173 silly addNameRange     '1.0.6',
+173 silly addNameRange     '1.0.7',
+173 silly addNameRange     '1.0.8',
+173 silly addNameRange     '1.0.9',
+173 silly addNameRange     '1.0.10',
+173 silly addNameRange     '2.0.0',
+173 silly addNameRange     '2.1.0',
+173 silly addNameRange     '2.1.1',
+173 silly addNameRange     '2.1.2',
+173 silly addNameRange     '2.2.0',
+173 silly addNameRange     '2.2.1',
+173 silly addNameRange     '3.0.0',
+173 silly addNameRange     '3.0.1',
+173 silly addNameRange     '3.0.2',
+173 silly addNameRange     '3.0.3',
+173 silly addNameRange     '3.0.4',
+173 silly addNameRange     '3.0.5',
+173 silly addNameRange     '3.0.6' ] ]
+174 silly addNamed nopt@1.0.10
+175 verbose addNamed "1.0.10" is a plain semver version for nopt
+176 silly mapToRegistry name nopt
+177 silly mapToRegistry using default registry
+178 silly mapToRegistry registry https://registry.npmjs.org/
+179 silly mapToRegistry uri https://registry.npmjs.org/nopt
+180 verbose addRemoteTarball https://registry.npmjs.org/nopt/-/nopt-1.0.10.tgz not in flight; adding
+181 verbose addRemoteTarball [ 'https://registry.npmjs.org/nopt/-/nopt-1.0.10.tgz',
+181 verbose addRemoteTarball   '6ddd21bd2a31417b92727dd585f8a6f37608ebee' ]
+182 info retry fetch attempt 1 at 02:04:09
+183 info attempt registry request try #1 at 02:04:09
+184 http fetch GET https://registry.npmjs.org/nopt/-/nopt-1.0.10.tgz
+185 silly cache afterAdd findup-sync@0.1.3
+186 verbose afterAdd /home/ilja/.npm/findup-sync/0.1.3/package/package.json not in flight; writing
+187 verbose correctMkdir /home/ilja/.npm correctMkdir not in flight; initializing
+188 verbose afterAdd /home/ilja/.npm/findup-sync/0.1.3/package/package.json written
+189 http fetch 200 https://registry.npmjs.org/resolve/-/resolve-0.3.1.tgz
+190 silly fetchAndShaCheck shasum 34c63447c664c70598d1c9b126fc43b2a24310a4
+191 verbose addTmpTarball /tmp/npm-15347-89a30920/registry.npmjs.org/resolve/-/resolve-0.3.1.tgz not in flight; adding
+192 verbose addTmpTarball already have metadata; skipping unpack for resolve@0.3.1
+193 verbose correctMkdir /home/ilja/.npm correctMkdir not in flight; initializing
+194 silly cache afterAdd resolve@0.3.1
+195 verbose afterAdd /home/ilja/.npm/resolve/0.3.1/package/package.json not in flight; writing
+196 verbose correctMkdir /home/ilja/.npm correctMkdir not in flight; initializing
+197 verbose afterAdd /home/ilja/.npm/resolve/0.3.1/package/package.json written
+198 http fetch 200 https://registry.npmjs.org/nopt/-/nopt-1.0.10.tgz
+199 silly fetchAndShaCheck shasum 6ddd21bd2a31417b92727dd585f8a6f37608ebee
+200 verbose addTmpTarball /tmp/npm-15347-89a30920/registry.npmjs.org/nopt/-/nopt-1.0.10.tgz not in flight; adding
+201 verbose addTmpTarball already have metadata; skipping unpack for nopt@1.0.10
+202 verbose correctMkdir /home/ilja/.npm correctMkdir not in flight; initializing
+203 silly rollbackFailedOptional Starting
+204 silly rollbackFailedOptional Finishing
+205 silly runTopLevelLifecycles Starting
+206 silly runTopLevelLifecycles Finishing
+207 silly install printInstalled
+208 verbose stack Error: EACCES, mkdir '/home/ilja/.npm/nopt/1.0.10'
+209 verbose cwd /home/ilja/Dokumente/dialogalitaet/development/website/angularJS/webstorm/code
+210 error Linux 3.13.0-65-generic
+211 error argv "node" "/usr/bin/npm" "install" "-g" "grunt-cli"
+212 error node v0.10.37
+213 error npm  v3.7.1
+214 error path /home/ilja/.npm/nopt/1.0.10
+215 error code EACCES
+216 error errno 3
+217 error Error: EACCES, mkdir '/home/ilja/.npm/nopt/1.0.10'
+217 error  { [Error: EACCES, mkdir '/home/ilja/.npm/nopt/1.0.10']
+217 error   errno: 3,
+217 error   code: 'EACCES',
+217 error   path: '/home/ilja/.npm/nopt/1.0.10',
+217 error   parent: 'grunt-cli' }
+218 error Please try running this command again as root/Administrator.
+219 verbose exit [ 3, true ]

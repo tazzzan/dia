@@ -1,0 +1,261 @@
+/*
+elements of:
+#livestream
+*/
+
+#liveStreamFilters {
+
+    float: left;
+    width: 100%;
+    height: 5%;
+    background-color: #228B22;
+    color: white;
+    text-align: center;
+
+}
+
+.topic {
+    background-color: #228B22;
+    height: auto;
+    width: 100%;
+    padding-bottom: 1%;
+    float: left;
+}
+
+/*
+sections of:
+#topic
+*/
+
+#topicAreaTitle {
+    padding-left: 1%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    float: left;
+}
+
+#topicAreaBody {
+    height: 13%;
+    width: 100%;
+}
+
+#topicAreaBottom {
+    width: 100%;
+    height: auto;
+    background: silver;
+    float: left;
+}
+
+/*
+sections of:
+#topicAreaBody
+*/
+
+#topicAreaLeft {
+    height: 100%;
+    width: 50%;
+    font-size: 8px;
+    color: white;
+    float: left;
+}
+
+#topicAreaRight {
+    height: 100%;
+    width: 50%;
+    float: left;
+    color: white;
+    font-style: oblique;
+}
+
+/*
+elements of:
+#topic
+*/
+.topicsElements {
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+#topicTitle {
+
+    height: 2%;
+    font-size: 20%;
+}
+
+#dropArea {
+    border: 2px;
+    border-style: solid;
+    border-color: crimson;
+}
+
+#topicOwnerBox {
+    height: 15%;
+    width: 50%;
+}
+
+#topicOwner {
+    width: auto;
+    font-size: 200%;
+    color: white;
+    margin-left: 5px;
+}
+
+#topicDescriptionBox {
+    height: 70%;
+    width: 90%;
+}
+
+#topicDescription {
+    color: white;
+    font-size: 150%;
+    margin-left: 5px;
+}
+
+#topicVoteResultsBox {
+    margin-top: 10%;
+    height: 40%;
+    width: 80%;
+}
+
+#topicVoteResults {
+
+    font-size: 12px;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.draggableVoteOption {
+
+    float: left;
+    width: 50px;
+    height: 20px;
+    background-color: rgba(255, 0, 0, 0.4);
+    color: white;
+    font-size: 13px;
+    margin-top: 5%;
+    margin-left: 5px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.hrTopic {
+    border: 0;
+    height: 2%;
+    background: lightgrey;
+    float: left;
+    padding: 2%;
+}
+
+/*
+sections of:
+äcomment
+*/
+#commentsSection {
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+#commentsActual {
+    clear: left;
+    width: 50%;
+    float: left;
+}
+
+#commentsBest {
+    float: left;
+    width: 50%;
+}
+
+.addCommentingArea {
+    clear: left;
+    width: 100%;
+    float: left;
+}
+
+#commentingArea  {
+    float: left;
+    width: 100%;
+    height: 5%;
+}
+
+#inputComment {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    float: left;
+    width: 80%;
+    height: 80%;
+}
+
+#buttonAddComment {
+    float: right;
+    font-size: 80%;
+    width: 15%;
+    height: 80%;
+}
+#buttonAddTopic {
+    float: left;
+    font-size: 80%;
+    width: 40%;
+    height: 20px;
+}
+/*
+elements of:
+#comment
+*/
+
+.draggableTopicsComment {
+    width: 130px;
+    height: auto;
+    margin-left: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-size: 13px;
+    text-align: left;
+}
+
+.commentArrow {
+    float: left;
+    width: 100%;
+    height: 3%;
+    background-color: grey;
+}
+
+.createTopicArrow {
+    float: left;
+    width: 100%;
+    height: 3%;
+    background-color: grey;
+    text-align: center;
+    color: white;
+    font-style: oblique;
+}
+
+#inputTopicTitle{
+    float: left;
+    width: 80%;
+    height: 20px;
+}
+#inputTopicDescription {
+    float: left;
+    width: 80%;
+    height: 80px;
+}
+
+#inputTopicBackground {
+    float: left;
+    width: 80%;
+    height: 80px;
+}
+
+#inputTopicVoteOptions {
+    float: left;
+    width: 80%;
+    height: 20px;
+}
+
+#buttonDeleteTopic {
+    width: 100%;
+    height: 3%;
+}

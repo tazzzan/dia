@@ -1,0 +1,9 @@
+<!-- Here ui_topic -->
+
+
+
+<div ng-repeat="topic in topics | filter:query" topic-section indextopic="{{$index}}" topictopic='topic'>
+
+    <div ng-include="'partials/pageParts/main/seekerAndVoter/liveStream/topic.html'"> </div>
+
+</div>

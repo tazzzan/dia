@@ -1,0 +1,38 @@
+<!-- Here ui_topicCreation -->
+
+<div id="createTopicArea">
+
+    <create-topicadd  ng-click="toggleCreateTopicArea()" >
+    </create-topicadd>
+
+
+    <div id="createTopicSection"  ng-hide="createTopicadd.status">
+
+
+        <input id="inputTopicTitle" type="text" placeholder="Topic title" ng-model="topicTitleAdded" >
+        <input id="inputTopicDescription" type="text" placeholder="Topic description" ng-model="topicDescriptionAdded" >
+        <input id="inputTopicBackground" type="text" placeholder="Topic background" ng-model="topicBackgroundAdded" >
+        <input id="inputTopicVoteOptions" type="text" placeholder="Topic vote options without comma" ng-model="topicOptionsAdded" >
+
+        <button id="buttonAddTopic" class="buttonsRoleSelection" ng-click="addTopic(topicTitleAdded, topicDescriptionAdded, topicBackgroundAdded, topicOptionsAdded)">
+            Add Topic
+        </button>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- Here ui_topic -->
+
+
+
+<div ng-repeat="topic in topics | filter:query" topic-section indextopic="{{$index}}" topictopic='topic'>
+
+    <div ng-include="'partials/pageParts/main/publisher/liveStream/topic.html'"> </div>
+
+</div>

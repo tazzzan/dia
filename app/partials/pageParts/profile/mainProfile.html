@@ -1,0 +1,11 @@
+<p> {{ watchedProfile.name }}</p>
+
+<p> geht zur uni in : </p>
+
+<p> {{ watchedProfile.uni }}</p>
+
+<button id="buttonSendMessageAtProfileMain" class="buttonsRoleSelection"
+        ui-sref="main.messages"
+        ng-click="selectMessageReceiver(watchedProfile)">
+    Send Message
+</button>

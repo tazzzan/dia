@@ -1,0 +1,100 @@
+<div class="topic">
+
+        <div  id="topicAreaTitle" ng-click="selectTopic(topic)">
+            <p> {{ topic.name }} </p>
+        </div>
+
+
+        <div id="topicAreaBody">
+
+            <div id="topicAreaLeft">
+
+                <div id="topicOwnerBox">
+                    <div id="topicOwner" class="topicsElements"><p> {{topic.owner}}</p> </div>
+                </div>
+
+                <div id="topicDescriptionBox">
+                    <p id="topicDescription" class="topicsElements">
+                       {{topic.description}}
+                    </p>
+                </div>
+
+            </div>
+
+            <div id="topicAreaRight">
+
+                <div id="topicVoteResultsBox" class="topicsElements">
+                    <ul id="topicVoteResults" >
+                        <li ng-repeat="a in topic.finalVotingResults"> {{ a.voteOptionName +" has " + a.counter }}</li>
+                    </ul>
+                </div>
+
+
+
+                <div id="topicVoteOptionsBox">
+
+                    <div class="voteOption" voteoption-section voteoption='b' ng-repeat="b in topic.voteOptions" ng-model="b" ng-click="voteOnTopic(b, topic)">
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="topicAreaBottom">
+
+
+            <comment-arrow topic-index='topic.idInLiveStream' ng-click="toggle(topic.idInLiveStream)" >
+            </comment-arrow>
+
+
+            <div id="commentsSection" class="commentsSection-{{topic.idInLiveStream}}" ng-hide="commentarrow.status">
+
+                <div id="commentsActual">
+
+                    <div class="comment">
+
+                        <div
+                                ng-repeat="c in topic.comments"
+                                comment-section comment='c.text'>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div id="commentsBest">
+
+                    <div class="comment">
+
+                        <div
+                                ng-repeat="c in topic.comments"
+                                comment-section comment='c.text'>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+                <div id="addCommentingArea">
+                    <comment-arrow ng-click="toggleCommentAddSection(topic.idInLiveStream)" >
+                    </comment-arrow>
+                </div>
+
+                <div id="commentingArea" class="commentingArea-{{topic.idInLiveStream}}">
+                    <input id="inputComment" type="text" placeholder="write new comment here" ng-model="commentAdded" >
+                    <button id="buttonAddComment" class="buttonsRoleSelection" ng-click="addComment(commentAdded, topic)">
+                        Comment
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+</div>
